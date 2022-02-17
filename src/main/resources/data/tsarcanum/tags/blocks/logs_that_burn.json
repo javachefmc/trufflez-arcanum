@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#tsarcanum:great_oak_logs",
+    "#tsarcanum:heartwood_logs",
+    "#tsarcanum:willow_logs",
+    "#tsarcanum:elm_logs"
+  ]
+}

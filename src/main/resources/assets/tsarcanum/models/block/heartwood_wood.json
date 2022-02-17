@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "tsarcanum:block/heartwood_log",
+    "side": "tsarcanum:block/heartwood_log"
+  }
+}

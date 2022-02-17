@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column_horizontal",
+  "textures": {
+    "end": "tsarcanum:block/willow_log_top",
+    "side": "tsarcanum:block/willow_log"
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"parent": "tsarcanum:item/staff",
+	"textures": {
+		"base": "tsarcanum:block/elm_planks",
+		"cap": "minecraft:block/dark_oak_planks",
+		"focus": "minecraft:block/diamond_block",
+		"overlay1": "tsarcanum:overlay/staff1",
+		"overlay2": "tsarcanum:overlay/staff2",
+		"overlay3": "tsarcanum:overlay/staff3"
+	}
+}

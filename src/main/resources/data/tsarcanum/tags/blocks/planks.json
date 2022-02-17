@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:great_oak_planks",
+    "tsarcanum:heartwood_planks",
+    "tsarcanum:willow_planks",
+    "tsarcanum:elm_planks"
+  ]
+}

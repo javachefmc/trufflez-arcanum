@@ -1,0 +1,9 @@
+{
+	"parent": "tsarcanum:item/heartwood_staff",
+	"textures": {
+		"focus": "minecraft:block/emerald_block",
+		"overlay1": "tsarcanum:overlay/staff1",
+		"overlay2": "tsarcanum:overlay/staff2",
+		"overlay3": "tsarcanum:overlay/staff3"
+	}
+}

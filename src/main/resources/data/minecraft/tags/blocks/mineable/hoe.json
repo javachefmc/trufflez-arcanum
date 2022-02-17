@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:great_oak_leaves",
+    "tsarcanum:heartwood_leaves",
+    "tsarcanum:willow_leaves",
+    "tsarcanum:elm_leaves"
+  ]
+}

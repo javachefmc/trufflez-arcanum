@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tsarcanum:block/heartwood_slab"
+    },
+    "type=top": {
+      "model": "tsarcanum:block/heartwood_slab_top"
+    },
+    "type=double": {
+      "model": "tsarcanum:block/heartwood_planks"
+    }
+  }
+}

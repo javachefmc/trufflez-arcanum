@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "tsarcanum:refractory_clay"
+  },
+  "result": "tsarcanum:refractory_block",
+  "experience": 0.15
+}
+

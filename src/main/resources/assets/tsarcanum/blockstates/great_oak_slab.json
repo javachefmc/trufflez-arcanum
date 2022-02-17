@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tsarcanum:block/great_oak_slab"
+    },
+    "type=top": {
+      "model": "tsarcanum:block/great_oak_slab_top"
+    },
+    "type=double": {
+      "model": "tsarcanum:block/great_oak_planks"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "tsarcanum:block/great_oak_leaves"
+  }
+}

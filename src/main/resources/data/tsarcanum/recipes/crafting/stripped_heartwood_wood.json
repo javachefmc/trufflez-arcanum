@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "tsarcanum:stripped_heartwood_log"
+    }
+  },
+  "result": {
+    "item": "tsarcanum:stripped_heartwood_wood",
+    "count": 4
+  }
+}

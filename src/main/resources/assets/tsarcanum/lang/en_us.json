@@ -1,0 +1,75 @@
+{
+  "itemGroup.tsarcanum.main": "T's Alchemy",
+  "itemGroup.tsarcanum.magic": "T's Alchemy Staves",
+  
+  "itemGroup.tsarcanum.devtools": "dev tools",
+  
+  "item.tsarcanum.devtool": "Dev Shovel",
+  "block.tsarcanum.devcube": "Dev Cube",
+
+  "block.tsarcanum.vitriol": "Vitriol",
+  
+  "item.tsarcanum.copper_sheet": "Copper Sheet",
+  "block.tsarcanum.copper_tubing": "Copper Tubing",
+  "block.tsarcanum.alembic": "Alembic",
+
+  "block.tsarcanum.refractory_clay": "Refractory Clay",
+  "item.tsarcanum.refractory_clay_brick": "Refractory Clay Brick",
+  "item.tsarcanum.refractory_brick": "Refractory Brick",
+  "block.tsarcanum.refractory_bricks": "Refractory Bricks",
+  "block.tsarcanum.refractory_block": "Refractory Block",
+  "block.tsarcanum.athanor": "Furnace Arcana",
+  
+  "item.tsarcanum.great_oak_staff_core": "Great Oak Staff Core",
+  "item.tsarcanum.heartwood_staff_core": "Heartwood Staff Core",
+  "item.tsarcanum.willow_staff_core": "Willow Staff Core",
+  "item.tsarcanum.elm_staff_core": "Elm Staff Core",
+  
+  "item.tsarcanum.great_oak_staff": "Great Oak Staff",
+  "item.tsarcanum.heartwood_staff": "Heartwood Staff",
+  "item.tsarcanum.willow_staff": "Willow Staff",
+  "item.tsarcanum.elm_staff": "Elm Staff",
+
+  "block.tsarcanum.auric_workbench": "§6Auric Workbench",
+  "block.tsarcanum.staff_pedestal": "Staff Pedestal",
+  
+  "block.tsarcanum.great_oak_log": "Great Oak Log",
+  "block.tsarcanum.great_oak_wood": "Great Oak Wood",
+  "block.tsarcanum.great_oak_planks": "Great Oak Planks",
+  "block.tsarcanum.great_oak_leaves": "Great Oak Leaves",
+  "block.tsarcanum.stripped_great_oak_log": "Stripped Great Oak Log",
+  "block.tsarcanum.stripped_great_oak_wood": "Stripped Great Oak Wood",
+  "block.tsarcanum.great_oak_sapling": "Great Oak Sapling",
+  "block.tsarcanum.great_oak_stairs": "Great Oak Stairs",
+  "block.tsarcanum.great_oak_slab": "Great Oak Slab",
+  
+  "block.tsarcanum.heartwood_log": "Heartwood Log",
+  "block.tsarcanum.heartwood_wood": "Heartwood Wood",
+  "block.tsarcanum.heartwood_planks": "Heartwood Planks",
+  "block.tsarcanum.heartwood_leaves": "Heartwood Leaves",
+  "block.tsarcanum.stripped_heartwood_log": "Stripped Heartwood Log",
+  "block.tsarcanum.stripped_heartwood_wood": "Stripped Heartwood Wood",
+  "block.tsarcanum.heartwood_sapling": "Heartwood Sapling",
+  "block.tsarcanum.heartwood_stairs": "Heartwood Stairs",
+  "block.tsarcanum.heartwood_slab": "Heartwood Slab",
+
+  "block.tsarcanum.willow_log": "Willow Log",
+  "block.tsarcanum.willow_wood": "Willow Wood",
+  "block.tsarcanum.willow_planks": "Willow Planks",
+  "block.tsarcanum.willow_leaves": "Willow Leaves",
+  "block.tsarcanum.stripped_willow_log": "Stripped Willow Log",
+  "block.tsarcanum.stripped_willow_wood": "Stripped Willow Wood",
+  "block.tsarcanum.willow_sapling": "Willow Sapling",
+  "block.tsarcanum.willow_stairs": "Willow Stairs",
+  "block.tsarcanum.willow_slab": "Willow Slab",
+
+  "block.tsarcanum.elm_log": "Elm Log",
+  "block.tsarcanum.elm_wood": "Elm Wood",
+  "block.tsarcanum.elm_planks": "Elm Planks",
+  "block.tsarcanum.elm_leaves": "Elm Leaves",
+  "block.tsarcanum.stripped_elm_log": "Stripped Elm Log",
+  "block.tsarcanum.stripped_elm_wood": "Stripped Elm Wood",
+  "block.tsarcanum.elm_sapling": "Elm Sapling",
+  "block.tsarcanum.elm_stairs": "Elm Stairs",
+  "block.tsarcanum.elm_slab": "Elm Slab"
+}

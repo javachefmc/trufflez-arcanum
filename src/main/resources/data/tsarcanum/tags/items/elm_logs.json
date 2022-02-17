@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:elm_log",
+    "tsarcanum:elm_wood",
+    "tsarcanum:stripped_elm_log",
+    "tsarcanum:stripped_elm_wood"
+  ]
+}

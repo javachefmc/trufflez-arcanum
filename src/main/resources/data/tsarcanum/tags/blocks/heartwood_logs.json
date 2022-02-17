@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:heartwood_log",
+    "tsarcanum:heartwood_wood",
+    "tsarcanum:stripped_heartwood_log",
+    "tsarcanum:stripped_heartwood_wood"
+  ]
+}

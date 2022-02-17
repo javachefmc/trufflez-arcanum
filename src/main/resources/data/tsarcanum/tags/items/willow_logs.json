@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:willow_log",
+    "tsarcanum:willow_wood",
+    "tsarcanum:stripped_willow_log",
+    "tsarcanum:stripped_willow_wood"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "tsarcanum",
+  "version": "${version}",
+  "name": "Trufflez' Arcanum",
+  "description": "Under Development!",
+  "authors": [
+    "TrufflezMC"
+  ],
+  "contact": {
+    "homepage": "",
+    "issues": "",
+    "sources": ""
+  },
+  "license": "GNU Lesser General Public License version 3 (LGPLv3)",
+  "icon": "assets/tsarcanum/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "value": "com.trufflez.tsarcanum.TsArcanum"
+      }
+    ],
+    "client": [
+      "com.trufflez.tsarcanum.client.TsArcanumClient"
+    ]
+  },
+  "mixins": [
+    "tsarcanum.mixins.json"
+  ],
+  "accessWidener": "tsarcanum.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}

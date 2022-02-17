@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "tsarcanum:willow_logs"
+    }
+  ],
+  "result": {
+    "item": "tsarcanum:willow_planks",
+    "count": 4
+  }
+}

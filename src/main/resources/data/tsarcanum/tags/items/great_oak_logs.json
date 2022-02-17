@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:great_oak_log",
+    "tsarcanum:great_oak_wood",
+    "tsarcanum:stripped_great_oak_log",
+    "tsarcanum:stripped_great_oak_wood"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tsarcanum:refractory_clay"
+    }
+  ],
+  "result": {
+    "item": "tsarcanum:refractory_clay_brick",
+    "count": 4
+  }
+}

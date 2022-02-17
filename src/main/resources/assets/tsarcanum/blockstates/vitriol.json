@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {"model": "tsarcanum:block/vitriol"},
+      {"model": "tsarcanum:block/vitriol", "y": 90},
+      {"model": "tsarcanum:block/vitriol", "y": -90},
+      {"model": "tsarcanum:block/vitriol", "y": 180}
+    ] 
+  }
+}

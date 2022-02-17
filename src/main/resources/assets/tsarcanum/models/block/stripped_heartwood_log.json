@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "tsarcanum:block/stripped_heartwood_log_top",
+    "side": "tsarcanum:block/stripped_heartwood_log"
+  }
+}

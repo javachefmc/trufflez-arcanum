@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tsarcanum:refractory_clay"
+  },
+  "result": "tsarcanum:refractory_block",
+  "experience": 0.15
+}
+

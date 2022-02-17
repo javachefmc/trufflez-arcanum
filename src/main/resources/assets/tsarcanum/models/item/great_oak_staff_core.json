@@ -1,0 +1,6 @@
+{
+	"parent": "tsarcanum:item/staff_core",
+	"textures": {
+		"base": "tsarcanum:block/great_oak_planks"
+	}
+}

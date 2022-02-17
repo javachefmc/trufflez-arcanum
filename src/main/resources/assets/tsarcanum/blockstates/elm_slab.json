@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tsarcanum:block/elm_slab"
+    },
+    "type=top": {
+      "model": "tsarcanum:block/elm_slab_top"
+    },
+    "type=double": {
+      "model": "tsarcanum:block/elm_planks"
+    }
+  }
+}

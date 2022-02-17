@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "tsarcanum:block/great_oak_log_top",
+    "side": "tsarcanum:block/great_oak_log"
+  }
+}

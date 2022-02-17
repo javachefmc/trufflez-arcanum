@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:great_oak_slab",
+    "tsarcanum:heartwood_slab",
+    "tsarcanum:willow_slab",
+    "tsarcanum:elm_slab"
+  ]
+}

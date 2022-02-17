@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:auric_workbench",
+    "#tsarcanum:logs_that_burn",
+    "#tsarcanum:planks"
+  ]
+}

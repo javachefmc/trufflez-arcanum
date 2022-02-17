@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#**",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tsarcanum:copper_sheet"
+    },
+    "*": {
+      "item": "tsarcanum:copper_tubing"
+    }
+  },
+  "result": {
+    "item": "tsarcanum:alembic"
+  }
+}

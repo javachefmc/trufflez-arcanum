@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "tsarcanum:great_oak_logs"
+    }
+  ],
+  "result": {
+    "item": "tsarcanum:great_oak_planks",
+    "count": 4
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "tsarcanum:block/elm_log",
+    "side": "tsarcanum:block/elm_log"
+  }
+}
