@@ -25,6 +25,8 @@ public class TsArcanumClient implements ClientModInitializer {
         // Render Layers
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.GREAT_OAK_SAPLING);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.HEARTWOOD_SAPLING);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.WILLOW_SAPLING);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.ELM_SAPLING);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), TsBlocks.VITRIOL);
 
         //BlockRenderLayerMap.INSTANCE.putItems(RenderLayer.getTranslucent(), TsItems.GREAT_OAK_STAFF);

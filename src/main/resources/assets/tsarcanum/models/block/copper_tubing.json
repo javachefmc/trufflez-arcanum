@@ -1,6 +1,12 @@
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "tsarcanum:block/copper_tubing"
-  }
+	"credit": "Made with Blockbench",
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "tsarcanum:block/copper_tubing"
+	},
+	"display": {
+		"ground": {
+			"scale": [4, 4, 4]
+		}
+	}
 }
