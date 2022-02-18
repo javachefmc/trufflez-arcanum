@@ -133,8 +133,6 @@ public class TsArcanum implements ModInitializer {
 		//Registry.register(Registry.RECIPE_TYPE, new Identifier(MOD_ID, AuricRecipe.Type.ID), AuricRecipe.Type.INSTANCE);
 		//register("auric_workbench_recipe_serializer", new AuricWorkbenchRecipeSerializer());	//TODO
 		//register("auric_workbench_recipe", AuricWorkbenchRecipe.Type.INSTANCE);				//TODO
-
-		
 		
 		LOG.info("Trufflez' Arcanum Loaded.");
 	}
