@@ -2,23 +2,13 @@
 
 ![Trufflez' Arcanum](https://i.imgur.com/1iIHOTM.png)
 
-<br/>
-
-<font align="center" face="serif">
-
 ### *"Any sufficiently advanced technology is indistinguishable from magic."*
-
-</font>
-
-<br/>
 
 This is a **fabric-only mod** that aims to recreate the wonder and allure of classic magic mods. It is inspired by historical alchemy, and will have strong emphasis on visuals and automation.
 
-<br/>
-
-<font color="orange">Currently Pre-Alpha - this is barely close to finished! The current version is a testbed for the ever increasing number of blocks, items, and worldgen features.</font>
-
-<br/>
+```diff
+! Currently Pre-Alpha - this is barely close to finished!
+```
 
 ## Planned Features
 - **Automatable alchemy** for extracting energy from materials
