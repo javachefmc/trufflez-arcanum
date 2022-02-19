@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.item;
+package com.trufflez.tsarcanum.item.custom;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;

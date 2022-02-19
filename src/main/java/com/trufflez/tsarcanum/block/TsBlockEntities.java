@@ -28,7 +28,7 @@ public class TsBlockEntities {
         AURIC_WORKBENCH_SCREENHANDLER = ScreenHandlerRegistry.registerSimple(new Identifier(TsArcanum.MOD_ID, "auric_workbench"), AuricWorkbenchScreenHandler::new);
     }
     
-    public static void registerBlockEntities() {
+    public static void init() {
         TsArcanum.LOGGER.info("Registering BlockEntities");
     }
 }

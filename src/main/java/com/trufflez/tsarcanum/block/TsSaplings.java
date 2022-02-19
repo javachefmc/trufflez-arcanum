@@ -2,7 +2,7 @@ package com.trufflez.tsarcanum.block;
 
 import com.trufflez.tsarcanum.TsArcanum;
 import com.trufflez.tsarcanum.block.patches.TsSaplingBlock;
-import com.trufflez.tsarcanum.item.TsItemGroup;
+import com.trufflez.tsarcanum.item.TsItemGroups;
 import com.trufflez.tsarcanum.world.feature.TsSaplingGenerator;
 import com.trufflez.tsarcanum.world.feature.TsTreeConfiguredFeatures;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -11,7 +11,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -19,8 +18,8 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 
-@SuppressWarnings("unused")
 public class TsSaplings {
+    
     public static final TsSaplingBlock GREAT_OAK_SAPLING;
     public static final TsSaplingBlock HEARTWOOD_SAPLING;
     public static final TsSaplingBlock WILLOW_SAPLING;
@@ -37,7 +36,7 @@ public class TsSaplings {
     private static boolean no(BlockState state, BlockView blockView, BlockPos pos) { return false; }
     
     private static BlockItem blockItem(Block block) {
-        return new BlockItem(block, new FabricItemSettings().group(TsItemGroup.MAIN));
+        return new BlockItem(block, new FabricItemSettings().group(TsItemGroups.MAIN));
     }
 
     private static TsSaplingBlock register(String id, ConfiguredFeature<?, ?> configuredFeature) {
@@ -50,18 +49,13 @@ public class TsSaplings {
                         .noCollision()
                 ));
     }
-
-    private static Block registerBlock(String name, Block block){
-        //registerBlockItem(name, block);
-        return Registry.register(Registry.BLOCK, new Identifier(TsArcanum.MOD_ID, name), block);
+    
+    private static TsSaplingBlock register(String id, TsSaplingBlock tsSaplingBlock) {
+        return Registry.register(Registry.BLOCK, new Identifier(TsArcanum.MOD_ID, id), tsSaplingBlock);
     }
-
-    private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registry.ITEM, new Identifier(TsArcanum.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
-    }
-
+    
     private static BlockItem register(String id, BlockItem blockItem) { return Registry.register(Registry.ITEM, new Identifier(TsArcanum.MOD_ID, id), blockItem); }
+    
     
     static {
         GREAT_OAK_SAPLING = register("great_oak_sapling", TsTreeConfiguredFeatures.GREAT_OAK);
@@ -69,13 +63,13 @@ public class TsSaplings {
         WILLOW_SAPLING = register("willow_sapling", TsTreeConfiguredFeatures.WILLOW);
         ELM_SAPLING = register("elm_sapling", TsTreeConfiguredFeatures.ELM);
 
-        GREAT_OAK_SAPLING_ITEM = register("great_oak_sapling", blockItem(TsSaplings.GREAT_OAK_SAPLING));
-        HEARTWOOD_SAPLING_ITEM = register("heartwood_sapling", blockItem(TsSaplings.HEARTWOOD_SAPLING));
-        WILLOW_SAPLING_ITEM = register("willow_sapling", blockItem(TsSaplings.WILLOW_SAPLING));
-        ELM_SAPLING_ITEM = register("elm_sapling", blockItem(TsSaplings.ELM_SAPLING));
+        GREAT_OAK_SAPLING_ITEM = register("great_oak_sapling", blockItem(GREAT_OAK_SAPLING));
+        HEARTWOOD_SAPLING_ITEM = register("heartwood_sapling", blockItem(HEARTWOOD_SAPLING));
+        WILLOW_SAPLING_ITEM = register("willow_sapling", blockItem(WILLOW_SAPLING));
+        ELM_SAPLING_ITEM = register("elm_sapling", blockItem(ELM_SAPLING));
     }
-    
-    public static void registerSaplings() {
+
+    public static void init() {
         TsArcanum.LOGGER.info("Registering saplings");
     }
 }

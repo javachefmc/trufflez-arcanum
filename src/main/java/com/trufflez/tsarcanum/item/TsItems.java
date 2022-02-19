@@ -2,6 +2,8 @@ package com.trufflez.tsarcanum.item;
 
 import com.trufflez.tsarcanum.TsArcanum;
 import com.trufflez.tsarcanum.block.TsBlocks;
+import com.trufflez.tsarcanum.item.custom.DevTool;
+import com.trufflez.tsarcanum.item.custom.StaffItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -35,7 +37,7 @@ public class TsItems {
     
 
     private static BlockItem blockItem(Block block) {
-        return new BlockItem(block, new FabricItemSettings().group(TsItemGroup.MAIN));
+        return new BlockItem(block, new FabricItemSettings().group(TsItemGroups.MAIN));
     }
 
     private static Item register(String id, Item item) { return Registry.register(Registry.ITEM, new Identifier(TsArcanum.MOD_ID, id), item); }
@@ -51,23 +53,23 @@ public class TsItems {
         WILLOW_LEAVES_ITEM = register("willow_leaves", blockItem(TsBlocks.WILLOW_LEAVES));
         ELM_LEAVES_ITEM = register("elm_leaves", blockItem(TsBlocks.ELM_LEAVES));
 
-        COPPER_SHEET = register("copper_sheet", new Item(new FabricItemSettings().maxCount(16).group(TsItemGroup.MAIN)));
-        REFRACTORY_CLAY_BRICK = register("refractory_clay_brick", new Item(new FabricItemSettings().group(TsItemGroup.MAIN)));
-        REFRACTORY_BRICK = register("refractory_brick", new Item(new FabricItemSettings().fireproof().group(TsItemGroup.MAIN)));
+        COPPER_SHEET = register("copper_sheet", new Item(new FabricItemSettings().maxCount(16).group(TsItemGroups.MAIN)));
+        REFRACTORY_CLAY_BRICK = register("refractory_clay_brick", new Item(new FabricItemSettings().group(TsItemGroups.MAIN)));
+        REFRACTORY_BRICK = register("refractory_brick", new Item(new FabricItemSettings().fireproof().group(TsItemGroups.MAIN)));
 
-        GREAT_OAK_STAFF_CORE = register("great_oak_staff_core", new Item(new FabricItemSettings().group(TsItemGroup.MAIN)));
-        HEARTWOOD_STAFF_CORE = register("heartwood_staff_core", new Item(new FabricItemSettings().group(TsItemGroup.MAIN)));
-        WILLOW_STAFF_CORE = register("willow_staff_core", new Item(new FabricItemSettings().group(TsItemGroup.MAIN)));
-        ELM_STAFF_CORE = register("elm_staff_core", new Item(new FabricItemSettings().group(TsItemGroup.MAIN)));
+        GREAT_OAK_STAFF_CORE = register("great_oak_staff_core", new Item(new FabricItemSettings().group(TsItemGroups.MAIN)));
+        HEARTWOOD_STAFF_CORE = register("heartwood_staff_core", new Item(new FabricItemSettings().group(TsItemGroups.MAIN)));
+        WILLOW_STAFF_CORE = register("willow_staff_core", new Item(new FabricItemSettings().group(TsItemGroups.MAIN)));
+        ELM_STAFF_CORE = register("elm_staff_core", new Item(new FabricItemSettings().group(TsItemGroups.MAIN)));
 
-        GREAT_OAK_STAFF = (StaffItem) register("great_oak_staff", new StaffItem(new FabricItemSettings().maxCount(1).fireproof().group(TsItemGroup.MAIN)));
-        HEARTWOOD_STAFF = (StaffItem) register("heartwood_staff", new StaffItem(new FabricItemSettings().maxCount(1).fireproof().group(TsItemGroup.MAIN)));
-        WILLOW_STAFF = (StaffItem) register("willow_staff", new StaffItem(new FabricItemSettings().maxCount(1).fireproof().group(TsItemGroup.MAIN)));
-        ELM_STAFF = (StaffItem) register("elm_staff", new StaffItem(new FabricItemSettings().maxCount(1).fireproof().group(TsItemGroup.MAIN)));
+        GREAT_OAK_STAFF = (StaffItem) register("great_oak_staff", new StaffItem(new FabricItemSettings().maxCount(1).fireproof().group(TsItemGroups.MAIN)));
+        HEARTWOOD_STAFF = (StaffItem) register("heartwood_staff", new StaffItem(new FabricItemSettings().maxCount(1).fireproof().group(TsItemGroups.MAIN)));
+        WILLOW_STAFF = (StaffItem) register("willow_staff", new StaffItem(new FabricItemSettings().maxCount(1).fireproof().group(TsItemGroups.MAIN)));
+        ELM_STAFF = (StaffItem) register("elm_staff", new StaffItem(new FabricItemSettings().maxCount(1).fireproof().group(TsItemGroups.MAIN)));
     }
     
     
-    public static void registerItems() {
+    public static void init() {
         TsArcanum.LOGGER.info("Registering items");
     }
 }

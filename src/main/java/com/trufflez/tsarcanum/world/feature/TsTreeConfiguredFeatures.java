@@ -17,12 +17,8 @@ import java.util.OptionalInt;
 
 @SuppressWarnings("unused")
 public class TsTreeConfiguredFeatures {
+    
     public static final ConfiguredFeature<TreeFeatureConfig, ?> GREAT_OAK;
-
-    //public static ConfiguredFeature<RandomFeatureConfig, ?> GREAT_OAK_TREE_RANDOM;
-    
-    //public static RegistryKey<ConfiguredFeature<?, ?>> GREAT_OAK_KEY;
-    
     public static final ConfiguredFeature<TreeFeatureConfig, ?> HEARTWOOD;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> WILLOW;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> ELM;
@@ -90,7 +86,7 @@ public class TsTreeConfiguredFeatures {
         ELM = ConfiguredFeatures.register("elm", Feature.TREE.configure(elm().build()));
     }
     
-    public static void registerTreeConfiguredFeatures() {
+    public static void init() {
         TsArcanum.LOGGER.info("Registering TreeConfiguredFeatures");
     }
 }

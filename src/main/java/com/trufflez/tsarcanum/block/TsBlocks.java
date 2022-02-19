@@ -5,7 +5,7 @@ import com.trufflez.tsarcanum.block.custom.AuricWorkbench;
 import com.trufflez.tsarcanum.block.custom.StaffPedestal;
 import com.trufflez.tsarcanum.block.custom.VitriolBlock;
 import com.trufflez.tsarcanum.block.patches.TsStairsBlock;
-import com.trufflez.tsarcanum.item.TsItemGroup;
+import com.trufflez.tsarcanum.item.TsItemGroups;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -106,7 +106,7 @@ public class TsBlocks {
     
     private static Item registerBlockItem(String id, Block block) {
         return Registry.register(Registry.ITEM, new Identifier(TsArcanum.MOD_ID, id),
-                new BlockItem(block, new FabricItemSettings().group(TsItemGroup.MAIN)));
+                new BlockItem(block, new FabricItemSettings().group(TsItemGroups.MAIN)));
     }
     
     static {
@@ -162,7 +162,7 @@ public class TsBlocks {
         VITRIOL = register("vitriol", new VitriolBlock(FabricBlockSettings.of(Material.GLASS).breakByHand(true).sounds(BlockSoundGroup.AMETHYST_CLUSTER).nonOpaque().luminance(8).dynamicBounds().noCollision()));
     }
     
-    public static void registerBlocks() {
+    public static void init() {
         TsArcanum.LOGGER.info("Registering blocks.");
     }
 }

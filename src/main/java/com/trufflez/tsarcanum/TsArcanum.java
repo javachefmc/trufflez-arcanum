@@ -6,6 +6,7 @@ import com.trufflez.tsarcanum.block.TsBlocks;
 import com.trufflez.tsarcanum.block.TsSaplings;
 import com.trufflez.tsarcanum.item.TsItems;
 import com.trufflez.tsarcanum.world.feature.TsConfiguredFeatures;
+import com.trufflez.tsarcanum.world.feature.TsPlacedFeatures;
 import com.trufflez.tsarcanum.world.feature.TsTreeConfiguredFeatures;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -24,23 +25,23 @@ public class TsArcanum implements ModInitializer {
 		/*
 		Some modders register items first: Items -> Blocks -> BlockItems
 		I'm doing this: Blocks -> Items & BlockItems
+		It works, so..
 		 */
 		
-		TsBlocks.registerBlocks(); // Basic blocks
-		TsItems.registerItems(); // Basic items and special BlockItems
+		TsBlocks.init(); // Basic blocks
+		TsItems.init(); // Basic items and special BlockItems
 		
-		TsTreeConfiguredFeatures.registerTreeConfiguredFeatures(); // TreeConfiguredFeatures (for sapling gen)
+		TsTreeConfiguredFeatures.init(); // TreeConfiguredFeatures (individual tree generation)
 		
-		TsConfiguredFeatures.init();
+		TsConfiguredFeatures.init(); // General ConfiguredFeatures (includes tree placement checks)
+		TsPlacedFeatures.init(); // General PlacedFeatures (converts ConfiguredFeatures to PlacedFeatures with additional options)
 		
-		//TsTreePlacedFeatures.init(); // TreePlacedFeatures
+		TsSaplings.init(); // SaplingBlocks and BlockItems
 		
-		TsSaplings.registerSaplings(); // SaplingBlocks and BlockItems
-		
-		TsBlockEntities.registerBlockEntities(); // Block Entities and ScreenHandlers
+		TsBlockEntities.init(); // Block Entities and ScreenHandlers
 		
 		
-		TsBlockProperties.registerBlockProperties(); // Flammable, Compostable, Strippable, Tinted
+		TsBlockProperties.init(); // Flammable, Compostable, Strippable, Tinted
 		
 		
 		//TsWorldGen.init(); // World generation

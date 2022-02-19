@@ -14,5 +14,4 @@ public class GreatOakSaplingGenerator extends SaplingGenerator {
     protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random random, boolean bees) {
         return TsTreeConfiguredFeatures.GREAT_OAK;
     }
-    
 }

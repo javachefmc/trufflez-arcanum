@@ -1,7 +1,5 @@
 package com.trufflez.tsarcanum.block.patches;
 
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.sapling.SaplingGenerator;
 
@@ -11,8 +9,9 @@ public class TsSaplingBlock extends SaplingBlock {
         super(generator, settings);
     }
 
+    /*
     @Override
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
-    }
+    }*/
 }

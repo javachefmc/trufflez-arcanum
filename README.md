@@ -1,5 +1,3 @@
-# trufflez-arcanum
-
 ![Trufflez' Arcanum](https://i.imgur.com/1iIHOTM.png)
 
 ### *"Any sufficiently advanced technology is indistinguishable from magic."*
@@ -22,7 +20,8 @@ This is a **fabric-only mod** that aims to recreate the wonder and allure of cla
 
 ## Inspiration
 - **Actual alchemy** - many features are direct implementations of ancient scientific tools and terminology
-- **Thaumcraft** (what magic mod isn't?)
+- **BiomesOP** - foliage and custom biome implementation
+- **Thaumcraft** - what magic mod isn't?
 
 ## Currently Implemented
 - Base models for workbench, staves, alembic, and vitriol

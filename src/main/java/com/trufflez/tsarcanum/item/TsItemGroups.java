@@ -7,7 +7,8 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
-public class TsItemGroup {
+public class TsItemGroups {
+    //TODO: separate into blocks/decoration/magic/etc
     public static final ItemGroup MAIN = FabricItemGroupBuilder.build(new Identifier(TsArcanum.MOD_ID, "main"),
             () -> new ItemStack(TsBlocks.AURIC_WORKBENCH));
 }
