@@ -42,6 +42,16 @@ public class TsTreeConfiguredFeatures {
     }
     
     
+    private static Builder standard(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
+        return new Builder(BlockStateProvider.of(log),
+                new StraightTrunkPlacer(baseHeight, firstRandomHeight, secondRandomHeight),
+                BlockStateProvider.of(leaves),
+                new BlobFoliagePlacer(ConstantIntProvider.create(radius),
+                        ConstantIntProvider.create(0), 3),
+                new TwoLayersFeatureSize(1, 0, 1));
+    }
+    
+    
     private static Builder greatOak() {
         return (new Builder(BlockStateProvider.of(TsBlocks.GREAT_OAK_LOG),
                 new TsLargeTrunkPlacer(8, 0, 0),
