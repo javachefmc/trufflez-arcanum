@@ -2,6 +2,11 @@ package com.trufflez.tsarcanum.world.feature;
 
 import com.trufflez.tsarcanum.TsArcanum;
 import com.trufflez.tsarcanum.block.TsBlocks;
+import com.trufflez.tsarcanum.world.feature.tree.custom.TsDroopyFoliagePlacer;
+import com.trufflez.tsarcanum.world.feature.tree.custom.TsLargeFoliagePlacer;
+import com.trufflez.tsarcanum.world.feature.tree.custom.TsLargeTrunkPlacer;
+import com.trufflez.tsarcanum.world.feature.tree.custom.TsRootedTrunkPlacer;
+import net.minecraft.block.Block;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -9,13 +14,15 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.TreeFeatureConfig.Builder;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.LargeOakFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.OptionalInt;
 
-@SuppressWarnings("unused")
+
 public class TsTreeConfiguredFeatures {
     
     public static final ConfiguredFeature<TreeFeatureConfig, ?> GREAT_OAK;
@@ -24,15 +31,20 @@ public class TsTreeConfiguredFeatures {
     public static final ConfiguredFeature<TreeFeatureConfig, ?> ELM;
     
     // Check AbstractTreeGrower for growing trees
-
-    /*
-     * Currently I'm using fancy oak code to generate all four trees. 
-     * Yes, there will be updated tree models but that's not the highest priority yet
-     */
+    
+    private static Builder standard(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
+        return new Builder(BlockStateProvider.of(log),
+                new StraightTrunkPlacer(baseHeight, firstRandomHeight, secondRandomHeight),
+                BlockStateProvider.of(leaves),
+                new BlobFoliagePlacer(ConstantIntProvider.create(radius),
+                        ConstantIntProvider.create(0), 3),
+                new TwoLayersFeatureSize(1, 0, 1));
+    }
+    
     
     private static Builder greatOak() {
         return (new Builder(BlockStateProvider.of(TsBlocks.GREAT_OAK_LOG),
-                new LargeOakTrunkPlacer(3, 11, 0),
+                new TsLargeTrunkPlacer(8, 0, 0),
                 BlockStateProvider.of(TsBlocks.GREAT_OAK_LEAVES),
                 new LargeOakFoliagePlacer(
                         ConstantIntProvider.create(2),
@@ -43,11 +55,11 @@ public class TsTreeConfiguredFeatures {
 
     private static Builder heartwood() {
         return (new Builder(BlockStateProvider.of(TsBlocks.HEARTWOOD_LOG),
-                new LargeOakTrunkPlacer(3, 11, 0),
+                new TsRootedTrunkPlacer(8, 0, 0),
                 BlockStateProvider.of(TsBlocks.HEARTWOOD_LEAVES),
-                new LargeOakFoliagePlacer(
+                new TsLargeFoliagePlacer(
                         ConstantIntProvider.create(2),
-                        ConstantIntProvider.create(4), 4),
+                        ConstantIntProvider.create(0)),
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))))
                 .ignoreVines();
     }
@@ -56,9 +68,9 @@ public class TsTreeConfiguredFeatures {
         return (new Builder(BlockStateProvider.of(TsBlocks.WILLOW_LOG),
                 new LargeOakTrunkPlacer(3, 11, 0),
                 BlockStateProvider.of(TsBlocks.WILLOW_LEAVES),
-                new LargeOakFoliagePlacer(
+                new TsDroopyFoliagePlacer(
                         ConstantIntProvider.create(2),
-                        ConstantIntProvider.create(4), 4),
+                        ConstantIntProvider.create(4)),
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))))
                 .ignoreVines();
     }

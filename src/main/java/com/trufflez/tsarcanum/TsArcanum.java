@@ -25,9 +25,11 @@ public class TsArcanum implements ModInitializer {
 		// Must be done in this order!
 		
 		/*
+		
 		Some modders register items first: Items -> Blocks -> BlockItems
 		I'm doing this: Blocks -> Items & BlockItems
 		It works, so..
+		
 		 */
 		
 		TsBlocks.init(); // Basic blocks
@@ -50,7 +52,6 @@ public class TsArcanum implements ModInitializer {
 		TsBiomes.init();
 		
 		//TsWorldGen.init(); // World generation
-		
 		
 		LOGGER.info("Trufflez' Arcanum Loaded.");
 	}
