@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum;
+package com.trufflez.tsarcanum.inventory;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
