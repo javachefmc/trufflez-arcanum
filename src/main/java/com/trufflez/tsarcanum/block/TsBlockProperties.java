@@ -23,7 +23,7 @@ public class TsBlockProperties {
         AxeItem.STRIPPED_BLOCKS.put(TsBlocks.ELM_WOOD, TsBlocks.STRIPPED_ELM_WOOD);
     }
     
-    public static void init(){
+    public static void registerBlockProperties(){
         FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.GREAT_OAK_LOG, 2, 2);
         FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.GREAT_OAK_WOOD, 2, 2);
         FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.STRIPPED_GREAT_OAK_LOG, 2, 2);
@@ -84,7 +84,7 @@ public class TsBlockProperties {
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> TsFoliageColors.getHeartwoodLeavesColor(), TsItems.HEARTWOOD_LEAVES_ITEM);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> TsFoliageColors.getWillowLeavesColor(), TsItems.WILLOW_LEAVES_ITEM);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> TsFoliageColors.getElmLeavesColor(), TsItems.ELM_LEAVES_ITEM);
-
+       
         addStrippables();
     }
 }

@@ -19,58 +19,56 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 
 public class TsBlocks {
-    public static Block DEV_CUBE;
+    public static final Block DEV_CUBE;
 
-    public static Block AURIC_WORKBENCH;
-    public static Block STAFF_PEDESTAL;
-    public static Block COPPER_TUBING;
-    public static Block COPPER_SPIGOT;
-    public static Block ALEMBIC;
-    public static Block REFRACTORY_CLAY;
-    public static Block REFRACTORY_BLOCK;
-    public static Block REFRACTORY_BRICKS;
-    public static Block ATHANOR;
+    public static final Block AURIC_WORKBENCH;
+    public static final Block STAFF_PEDESTAL;
+    public static final Block COPPER_TUBING;
+    public static final Block COPPER_SPIGOT;
+    public static final Block ALEMBIC;
+    public static final Block REFRACTORY_CLAY;
+    public static final Block REFRACTORY_BLOCK;
+    public static final Block REFRACTORY_BRICKS;
+    public static final Block ATHANOR;
     
-    public static Block GREAT_OAK_LOG;
-    public static Block GREAT_OAK_WOOD;
-    public static Block GREAT_OAK_PLANKS;
-    public static Block GREAT_OAK_LEAVES;
-    public static Block STRIPPED_GREAT_OAK_LOG;
-    public static Block STRIPPED_GREAT_OAK_WOOD;
-    public static Block GREAT_OAK_STAIRS;
-    public static Block GREAT_OAK_SLAB;
+    public static final Block GREAT_OAK_LOG;
+    public static final Block GREAT_OAK_WOOD;
+    public static final Block GREAT_OAK_PLANKS;
+    public static final Block GREAT_OAK_LEAVES;
+    public static final Block STRIPPED_GREAT_OAK_LOG;
+    public static final Block STRIPPED_GREAT_OAK_WOOD;
+    public static final Block GREAT_OAK_STAIRS;
+    public static final Block GREAT_OAK_SLAB;
     
-    public static Block HEARTWOOD_LOG;
-    public static Block HEARTWOOD_WOOD;
-    public static Block HEARTWOOD_PLANKS;
-    public static Block HEARTWOOD_LEAVES;
-    public static Block STRIPPED_HEARTWOOD_LOG;
-    public static Block STRIPPED_HEARTWOOD_WOOD;
-    public static Block HEARTWOOD_STAIRS;
-    public static Block HEARTWOOD_SLAB;
+    public static final Block HEARTWOOD_LOG;
+    public static final Block HEARTWOOD_WOOD;
+    public static final Block HEARTWOOD_PLANKS;
+    public static final Block HEARTWOOD_LEAVES;
+    public static final Block STRIPPED_HEARTWOOD_LOG;
+    public static final Block STRIPPED_HEARTWOOD_WOOD;
+    public static final Block HEARTWOOD_STAIRS;
+    public static final Block HEARTWOOD_SLAB;
     
-    public static Block WILLOW_LOG;
-    public static Block WILLOW_WOOD;
-    public static Block WILLOW_PLANKS;
-    public static Block WILLOW_LEAVES;
-    public static Block STRIPPED_WILLOW_LOG;
-    public static Block STRIPPED_WILLOW_WOOD;
-    public static Block WILLOW_STAIRS;
-    public static Block WILLOW_SLAB;
+    public static final Block WILLOW_LOG;
+    public static final Block WILLOW_WOOD;
+    public static final Block WILLOW_PLANKS;
+    public static final Block WILLOW_LEAVES;
+    public static final Block STRIPPED_WILLOW_LOG;
+    public static final Block STRIPPED_WILLOW_WOOD;
+    public static final Block WILLOW_STAIRS;
+    public static final Block WILLOW_SLAB;
     
-    public static Block ELM_LOG;
-    public static Block ELM_WOOD;
-    public static Block ELM_PLANKS;
-    public static Block ELM_LEAVES;
-    public static Block STRIPPED_ELM_LOG;
-    public static Block STRIPPED_ELM_WOOD;
-    public static Block ELM_STAIRS;
-    public static Block ELM_SLAB;
+    public static final Block ELM_LOG;
+    public static final Block ELM_WOOD;
+    public static final Block ELM_PLANKS;
+    public static final Block ELM_LEAVES;
+    public static final Block STRIPPED_ELM_LOG;
+    public static final Block STRIPPED_ELM_WOOD;
+    public static final Block ELM_STAIRS;
+    public static final Block ELM_SLAB;
     
-    public static Block VITRIOL;
+    public static final Block VITRIOL;
     
-    public TsBlocks(){}
-
     private static boolean yes(BlockState state, BlockView blockView, BlockPos pos) { return true; }
     private static boolean no(BlockState state, BlockView blockView, BlockPos pos) { return false; }
     
@@ -108,10 +106,10 @@ public class TsBlocks {
     
     private static Item registerBlockItem(String id, Block block) {
         return Registry.register(Registry.ITEM, new Identifier(TsArcanum.MOD_ID, id),
-                new BlockItem(block, new FabricItemSettings().group(TsItemGroup.TS_MAIN)));
+                new BlockItem(block, new FabricItemSettings().group(TsItemGroup.MAIN)));
     }
     
-    public static void init() {
+    static {
         DEV_CUBE = register("devcube", new Block(FabricBlockSettings.of(Material.STONE).strength(2.0f)));
         
         AURIC_WORKBENCH = register("auric_workbench", new AuricWorkbench(FabricBlockSettings.of(Material.WOOD).strength(4.0f)));
@@ -160,7 +158,11 @@ public class TsBlocks {
         STRIPPED_ELM_WOOD = register("stripped_elm_wood", createLogBlock(BlockSoundGroup.WOOD));
         ELM_SLAB = register("elm_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
         ELM_STAIRS = register("elm_stairs", new TsStairsBlock(TsBlocks.ELM_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-
+        
         VITRIOL = register("vitriol", new VitriolBlock(FabricBlockSettings.of(Material.GLASS).breakByHand(true).sounds(BlockSoundGroup.AMETHYST_CLUSTER).nonOpaque().luminance(8).dynamicBounds().noCollision()));
+    }
+    
+    public static void registerBlocks() {
+        TsArcanum.LOGGER.info("Registering blocks.");
     }
 }

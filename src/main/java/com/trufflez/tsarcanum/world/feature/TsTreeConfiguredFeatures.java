@@ -17,19 +17,15 @@ import java.util.OptionalInt;
 
 @SuppressWarnings("unused")
 public class TsTreeConfiguredFeatures {
-    public static ConfiguredFeature<TreeFeatureConfig, ?> GREAT_OAK;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> GREAT_OAK;
 
     //public static ConfiguredFeature<RandomFeatureConfig, ?> GREAT_OAK_TREE_RANDOM;
     
     //public static RegistryKey<ConfiguredFeature<?, ?>> GREAT_OAK_KEY;
     
-    public static ConfiguredFeature<TreeFeatureConfig, ?> HEARTWOOD;
-    public static ConfiguredFeature<TreeFeatureConfig, ?> WILLOW;
-    public static ConfiguredFeature<TreeFeatureConfig, ?> ELM;
-    
-    public TsTreeConfiguredFeatures() {
-        
-    }
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> HEARTWOOD;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> WILLOW;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> ELM;
     
     // Check AbstractTreeGrower for growing trees
 
@@ -87,23 +83,14 @@ public class TsTreeConfiguredFeatures {
                 configuredFeature);
     }
     
-    public static void init() {
-        System.out.println("TreeConfiguredFeatures start");
-        
+    static {
         GREAT_OAK = ConfiguredFeatures.register("great_oak", Feature.TREE.configure(greatOak().build()));
         HEARTWOOD = ConfiguredFeatures.register("heartwood", Feature.TREE.configure(heartwood().build()));
         WILLOW = ConfiguredFeatures.register("willow", Feature.TREE.configure(willow().build()));
         ELM = ConfiguredFeatures.register("elm", Feature.TREE.configure(elm().build()));
-        
-        /*GREAT_OAK_TREE_RANDOM = register("redwood_feature",
-                Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(List.of(new RandomFeatureEntry(
-                        GREAT_OAK.withWouldSurviveFilter(TsSaplings.GREAT_OAK_SAPLING), 0.1f)),
-                        GREAT_OAK.withWouldSurviveFilter(TsSaplings.GREAT_OAK_SAPLING))));
-        */
-        
-        //RegistryKey<ConfiguredFeature<?, ?>> GREAT_OAK_KEY = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(TsArcanum.MOD_ID, "great_oak"));
-        //Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, GREAT_OAK_KEY.getValue(), GREAT_OAK);
-        
-        System.out.println("TreeConfiguredFeatures done");
+    }
+    
+    public static void registerTreeConfiguredFeatures() {
+        TsArcanum.LOGGER.info("Registering TreeConfiguredFeatures");
     }
 }

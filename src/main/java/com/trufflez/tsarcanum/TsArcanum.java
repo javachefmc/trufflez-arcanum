@@ -19,24 +19,28 @@ public class TsArcanum implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		
-		// If unordered, can CRASH the game!
+		// Must be done in this order!
 		
-		TsBlocks.init(); // Basic blocks
-		//TsItems.init(); // Basic items and BlockItems
-		TsItems.init();
+		/*
+		Some modders register items first: Items -> Blocks -> BlockItems
+		I'm doing this: Blocks -> Items & BlockItems
+		 */
 		
-		TsTreeConfiguredFeatures.init(); // TreesConfiguredFeatures
+		TsBlocks.registerBlocks(); // Basic blocks
+		TsItems.registerItems(); // Basic items and special BlockItems
+		
+		TsTreeConfiguredFeatures.registerTreeConfiguredFeatures(); // TreeConfiguredFeatures (for sapling gen)
 		
 		TsConfiguredFeatures.init();
 		
 		//TsTreePlacedFeatures.init(); // TreePlacedFeatures
 		
-		TsSaplings.init(); // SaplingBlocks and BlockItems
+		TsSaplings.registerSaplings(); // SaplingBlocks and BlockItems
 		
-		TsBlockEntities.init(); // Block Entities and ScreenHandlers
+		TsBlockEntities.registerBlockEntities(); // Block Entities and ScreenHandlers
 		
 		
-		TsBlockProperties.init(); // Flammable, Compostable, Strippable, Tinted
+		TsBlockProperties.registerBlockProperties(); // Flammable, Compostable, Strippable, Tinted
 		
 		
 		//TsWorldGen.init(); // World generation
