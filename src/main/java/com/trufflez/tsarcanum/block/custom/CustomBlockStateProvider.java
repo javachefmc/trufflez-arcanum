@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.blocks;
+package com.trufflez.tsarcanum.block.custom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;

@@ -1,7 +1,7 @@
-package com.trufflez.tsarcanum.blocks;
+package com.trufflez.tsarcanum.block;
 
 import com.trufflez.tsarcanum.client.TsFoliageColors;
-import com.trufflez.tsarcanum.items.TsItems;
+import com.trufflez.tsarcanum.item.TsItems;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;

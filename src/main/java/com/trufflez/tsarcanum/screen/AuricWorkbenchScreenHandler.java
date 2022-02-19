@@ -1,6 +1,6 @@
 package com.trufflez.tsarcanum.screen;
 
-import com.trufflez.tsarcanum.blocks.TsBlockEntities;
+import com.trufflez.tsarcanum.block.TsBlockEntities;
 import com.trufflez.tsarcanum.inventory.AuricWorkbenchInventory;
 import com.trufflez.tsarcanum.inventory.AuricWorkbenchResultInventory;
 import com.trufflez.tsarcanum.inventory.AuricWorkbenchResultSlot;

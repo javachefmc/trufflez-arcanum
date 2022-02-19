@@ -1,7 +1,6 @@
 {
-  "itemGroup.tsarcanum.main": "T's Alchemy",
-  "itemGroup.tsarcanum.magic": "T's Alchemy Staves",
-  
+  "itemGroup.tsarcanum.main": "T's Arcanum",
+  "itemGroup.tsarcanum.magic": "T's Arcanum Items",
   "itemGroup.tsarcanum.devtools": "dev tools",
   
   "item.tsarcanum.devtool": "Dev Shovel",

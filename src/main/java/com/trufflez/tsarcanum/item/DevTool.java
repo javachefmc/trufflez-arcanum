@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.items;
+package com.trufflez.tsarcanum.item;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;

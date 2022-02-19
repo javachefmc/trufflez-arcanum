@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.blocks;
+package com.trufflez.tsarcanum.block.patches;
 
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;

@@ -1,6 +1,7 @@
-package com.trufflez.tsarcanum.blocks;
+package com.trufflez.tsarcanum.block;
 
 import com.trufflez.tsarcanum.TsArcanum;
+import com.trufflez.tsarcanum.block.custom.AuricWorkbenchBlockEntity;
 import com.trufflez.tsarcanum.screen.AuricWorkbenchScreenHandler;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;

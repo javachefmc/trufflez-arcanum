@@ -1,14 +1,16 @@
-package com.trufflez.tsarcanum.blocks;
+package com.trufflez.tsarcanum.block;
 
 import com.trufflez.tsarcanum.TsArcanum;
-import com.trufflez.tsarcanum.gen.feature.TsConfiguredFeatures;
-import com.trufflez.tsarcanum.gen.feature.TsSaplingGenerator;
+import com.trufflez.tsarcanum.block.patches.TsSaplingBlock;
+import com.trufflez.tsarcanum.world.feature.TsSaplingGenerator;
+import com.trufflez.tsarcanum.world.feature.TsTreeConfiguredFeatures;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -64,14 +66,27 @@ public class TsSaplings {
         );
     }*/
 
+    private static Block registerBlock(String name, Block block){
+        //registerBlockItem(name, block);
+        return Registry.register(Registry.BLOCK, new Identifier(TsArcanum.MOD_ID, name), block);
+    }
+
+    private static Item registerBlockItem(String name, Block block) {
+        return Registry.register(Registry.ITEM, new Identifier(TsArcanum.MOD_ID, name),
+                new BlockItem(block, new FabricItemSettings()));
+    }
+
     private static BlockItem register(String id, BlockItem blockItem) { return Registry.register(Registry.ITEM, new Identifier(TsArcanum.MOD_ID, id), blockItem); }
 
     
     public static void init() {
-        GREAT_OAK_SAPLING = register("great_oak_sapling", TsConfiguredFeatures.GREAT_OAK);
-        HEARTWOOD_SAPLING = register("heartwood_sapling", TsConfiguredFeatures.HEARTWOOD);
-        WILLOW_SAPLING = register("willow_sapling", TsConfiguredFeatures.WILLOW);
-        ELM_SAPLING = register("elm_sapling", TsConfiguredFeatures.ELM);
+        //GREAT_OAK_SAPLING = register("great_oak_sapling", TsTreeConfiguredFeatures.GREAT_OAK);
+        
+        
+        GREAT_OAK_SAPLING = register("great_oak_sapling", TsTreeConfiguredFeatures.GREAT_OAK);
+        HEARTWOOD_SAPLING = register("heartwood_sapling", TsTreeConfiguredFeatures.HEARTWOOD);
+        WILLOW_SAPLING = register("willow_sapling", TsTreeConfiguredFeatures.WILLOW);
+        ELM_SAPLING = register("elm_sapling", TsTreeConfiguredFeatures.ELM);
 
         GREAT_OAK_SAPLING_ITEM = register("great_oak_sapling", blockItem(TsSaplings.GREAT_OAK_SAPLING));
         HEARTWOOD_SAPLING_ITEM = register("heartwood_sapling", blockItem(TsSaplings.HEARTWOOD_SAPLING));

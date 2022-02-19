@@ -8,9 +8,9 @@
     "TrufflezMC"
   ],
   "contact": {
-    "homepage": "",
-    "issues": "",
-    "sources": ""
+    "homepage": "https://github.com/trufflezmc/trufflez-arcanum",
+    "issues": "https://github.com/trufflezmc/trufflez-arcanum/issues",
+    "sources": "https://github.com/trufflezmc/trufflez-arcanum"
   },
   "license": "GNU Lesser General Public License version 3 (LGPLv3)",
   "icon": "assets/tsarcanum/icon.png",

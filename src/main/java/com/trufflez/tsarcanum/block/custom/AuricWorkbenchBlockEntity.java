@@ -1,6 +1,7 @@
-package com.trufflez.tsarcanum.blocks;
+package com.trufflez.tsarcanum.block.custom;
 
 import com.trufflez.tsarcanum.ImplementedInventory;
+import com.trufflez.tsarcanum.block.TsBlockEntities;
 import com.trufflez.tsarcanum.screen.AuricWorkbenchScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;

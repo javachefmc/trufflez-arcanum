@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.blocks;
+package com.trufflez.tsarcanum.block.custom;
 
 import net.minecraft.block.HorizontalConnectingBlock;
 

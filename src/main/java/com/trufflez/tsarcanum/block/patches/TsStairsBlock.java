@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.blocks;
+package com.trufflez.tsarcanum.block.patches;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.StairsBlock;

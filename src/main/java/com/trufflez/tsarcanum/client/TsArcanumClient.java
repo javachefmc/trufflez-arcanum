@@ -1,10 +1,10 @@
 package com.trufflez.tsarcanum.client;
 
-import com.trufflez.tsarcanum.blocks.TsBlocks;
-import com.trufflez.tsarcanum.blocks.TsSaplings;
-import com.trufflez.tsarcanum.items.TsItems;
+import com.trufflez.tsarcanum.block.TsBlocks;
+import com.trufflez.tsarcanum.block.TsSaplings;
+import com.trufflez.tsarcanum.item.TsItems;
 import com.trufflez.tsarcanum.screen.AuricWorkbenchScreen;
-import com.trufflez.tsarcanum.blocks.TsBlockEntities;
+import com.trufflez.tsarcanum.block.TsBlockEntities;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

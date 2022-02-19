@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.blocks;
+package com.trufflez.tsarcanum.block.patches;
 
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.block.entity.SignBlockEntityRenderer;

@@ -1,9 +1,17 @@
-package com.trufflez.tsarcanum.blocks;
+package com.trufflez.tsarcanum.block;
 
 import com.trufflez.tsarcanum.TsArcanum;
+import com.trufflez.tsarcanum.block.custom.AuricWorkbench;
+import com.trufflez.tsarcanum.block.custom.StaffPedestal;
+import com.trufflez.tsarcanum.block.custom.VitriolBlock;
+import com.trufflez.tsarcanum.block.patches.TsStairsBlock;
+import com.trufflez.tsarcanum.item.TsItemGroup;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -88,10 +96,20 @@ public class TsBlocks {
     }
     
     // Register shortcuts
-    private static Block register(String id, Block block) { return Registry.register(Registry.BLOCK, new Identifier(TsArcanum.MOD_ID, id), block); }
+    private static Block registerCustom(String id, Block block) {
+        //registerBlockItem(id, block);
+        return Registry.register(Registry.BLOCK, new Identifier(TsArcanum.MOD_ID, id), block);
+    }
+
+    private static Block register(String id, Block block) {
+        registerBlockItem(id, block);
+        return Registry.register(Registry.BLOCK, new Identifier(TsArcanum.MOD_ID, id), block);
+    }
     
-    
-    
+    private static Item registerBlockItem(String id, Block block) {
+        return Registry.register(Registry.ITEM, new Identifier(TsArcanum.MOD_ID, id),
+                new BlockItem(block, new FabricItemSettings().group(TsItemGroup.TS_MAIN)));
+    }
     
     public static void init() {
         DEV_CUBE = register("devcube", new Block(FabricBlockSettings.of(Material.STONE).strength(2.0f)));
@@ -110,7 +128,7 @@ public class TsBlocks {
         GREAT_OAK_LOG = register("great_oak_log", createLogBlock(BlockSoundGroup.WOOD));
         GREAT_OAK_WOOD = register("great_oak_wood", createLogBlock(BlockSoundGroup.WOOD));
         GREAT_OAK_PLANKS = register("great_oak_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-        GREAT_OAK_LEAVES = register("great_oak_leaves", createLeavesBlock());
+        GREAT_OAK_LEAVES = registerCustom("great_oak_leaves", createLeavesBlock());
         STRIPPED_GREAT_OAK_LOG = register("stripped_great_oak_log", createLogBlock(BlockSoundGroup.WOOD));
         STRIPPED_GREAT_OAK_WOOD = register("stripped_great_oak_wood", createLogBlock(BlockSoundGroup.WOOD));
         GREAT_OAK_SLAB = register("great_oak_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
@@ -119,7 +137,7 @@ public class TsBlocks {
         HEARTWOOD_LOG = register("heartwood_log", createLogBlock(BlockSoundGroup.WOOD));
         HEARTWOOD_WOOD = register("heartwood_wood", createLogBlock(BlockSoundGroup.WOOD));
         HEARTWOOD_PLANKS = register("heartwood_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-        HEARTWOOD_LEAVES = register("heartwood_leaves", createLeavesBlock());
+        HEARTWOOD_LEAVES = registerCustom("heartwood_leaves", createLeavesBlock());
         STRIPPED_HEARTWOOD_LOG = register("stripped_heartwood_log", createLogBlock(BlockSoundGroup.WOOD));
         STRIPPED_HEARTWOOD_WOOD = register("stripped_heartwood_wood", createLogBlock(BlockSoundGroup.WOOD));
         HEARTWOOD_SLAB = register("heartwood_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
@@ -128,7 +146,7 @@ public class TsBlocks {
         WILLOW_LOG = register("willow_log", createLogBlock(BlockSoundGroup.WOOD));
         WILLOW_WOOD = register("willow_wood", createLogBlock(BlockSoundGroup.WOOD));
         WILLOW_PLANKS = register("willow_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-        WILLOW_LEAVES = register("willow_leaves", createLeavesBlock());
+        WILLOW_LEAVES = registerCustom("willow_leaves", createLeavesBlock());
         STRIPPED_WILLOW_LOG = register("stripped_willow_log", createLogBlock(BlockSoundGroup.WOOD));
         STRIPPED_WILLOW_WOOD = register("stripped_willow_wood", createLogBlock(BlockSoundGroup.WOOD));
         WILLOW_SLAB = register("willow_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
@@ -137,7 +155,7 @@ public class TsBlocks {
         ELM_LOG = register("elm_log", createLogBlock(BlockSoundGroup.WOOD));
         ELM_WOOD = register("elm_wood", createLogBlock(BlockSoundGroup.WOOD));
         ELM_PLANKS = register("elm_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-        ELM_LEAVES = register("elm_leaves", createLeavesBlock());
+        ELM_LEAVES = registerCustom("elm_leaves", createLeavesBlock());
         STRIPPED_ELM_LOG = register("stripped_elm_log", createLogBlock(BlockSoundGroup.WOOD));
         STRIPPED_ELM_WOOD = register("stripped_elm_wood", createLogBlock(BlockSoundGroup.WOOD));
         ELM_SLAB = register("elm_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
