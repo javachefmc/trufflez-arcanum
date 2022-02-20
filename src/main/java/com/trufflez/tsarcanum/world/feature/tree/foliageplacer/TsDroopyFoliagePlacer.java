@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.world.feature.tree.custom;
+package com.trufflez.tsarcanum.world.feature.tree.foliageplacer;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -14,35 +14,40 @@ import net.minecraft.world.gen.foliage.FoliagePlacerType;
 import java.util.Random;
 import java.util.function.BiConsumer;
 
-public class TsLargeFoliagePlacer extends FoliagePlacer {
-    public static final Codec<TsLargeFoliagePlacer> CODEC = RecordCodecBuilder.create((instance) -> 
-            fillFoliagePlacerFields(instance).apply(instance, TsLargeFoliagePlacer::new));
-
-    public TsLargeFoliagePlacer(IntProvider intProvider, IntProvider intProvider2) {
+public class TsDroopyFoliagePlacer extends FoliagePlacer {
+    public static final Codec<TsDroopyFoliagePlacer> CODEC = RecordCodecBuilder.create((instance) -> 
+            fillFoliagePlacerFields(instance).apply(instance, TsDroopyFoliagePlacer::new));
+    
+    public TsDroopyFoliagePlacer(IntProvider intProvider, IntProvider intProvider2) {
         super(intProvider, intProvider2);
     }
-
+    
     protected FoliagePlacerType<?> getType() {
-        return TsFoliagePlacers.LARGE_FOLIAGE_PLACER;
+        return TsFoliagePlacers.DROOPY_FOLIAGE_PLACER;
     }
-
+    
     protected void generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, TreeFeatureConfig config, int trunkHeight, TreeNode treeNode, int foliageHeight, int radius, int offset) {
-        boolean bl = treeNode.isGiantTrunk();
+        
+        // TODO: Placeholder
+        
         BlockPos blockPos = treeNode.getCenter().up(offset);
-        this.generateSquare(world, replacer, random, config, blockPos, radius + treeNode.getFoliageRadius(), -1 - foliageHeight, bl);
-        this.generateSquare(world, replacer, random, config, blockPos, radius - 1, -foliageHeight, bl);
-        this.generateSquare(world, replacer, random, config, blockPos, radius + treeNode.getFoliageRadius() - 1, 0, bl);
+        boolean bl = treeNode.isGiantTrunk();
+        
+        this.generateSquare(world, replacer, random, config, blockPos, radius + 2, -1, bl);
+        this.generateSquare(world, replacer, random, config, blockPos, radius + 1, 0, bl);
     }
-
+    
     public int getRandomHeight(Random random, int trunkHeight, TreeFeatureConfig config) {
         return 0;
     }
-
+    
     protected boolean isInvalidForLeaves(Random random, int dx, int y, int dz, int radius, boolean giantTrunk) {
-        if (y == 0) {
-            return (dx > 1 || dz > 1) && dx != 0 && dz != 0;
+        if (y == -1 && !giantTrunk) {
+            return dx == radius && dz == radius;
+        } else if (y == 1) {
+            return dx + dz > radius * 2 - 2;
         } else {
-            return dx == radius && dz == radius && radius > 0;
+            return false;
         }
     }
 }

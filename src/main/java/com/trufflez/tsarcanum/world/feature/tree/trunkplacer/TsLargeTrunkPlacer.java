@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.world.feature.tree.custom;
+package com.trufflez.tsarcanum.world.feature.tree.trunkplacer;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
@@ -16,18 +16,18 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.BiConsumer;
 
-public class TsRootedTrunkPlacer extends TrunkPlacer {
+public class TsLargeTrunkPlacer extends TrunkPlacer {
     
-    public static final Codec<TsRootedTrunkPlacer> CODEC = RecordCodecBuilder.create((instance) ->
-            fillTrunkPlacerFields(instance).apply(instance, TsRootedTrunkPlacer::new));
+    public static final Codec<TsLargeTrunkPlacer> CODEC = RecordCodecBuilder.create((instance) ->
+            fillTrunkPlacerFields(instance).apply(instance, TsLargeTrunkPlacer::new));
     
-    public TsRootedTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
+    public TsLargeTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
     }
 
     @Override
     protected TrunkPlacerType<?> getType() {
-        return TsTrunkPlacers.ROOTED_TRUNK_PLACER;
+        return TsTrunkPlacers.LARGE_TRUNK_PLACER;
     }
 
     @Override

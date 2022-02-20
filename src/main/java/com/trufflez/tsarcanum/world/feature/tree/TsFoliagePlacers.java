@@ -1,8 +1,8 @@
 package com.trufflez.tsarcanum.world.feature.tree;
 
 import com.trufflez.tsarcanum.mixin.FoliagePlacerTypeInvoker;
-import com.trufflez.tsarcanum.world.feature.tree.custom.TsDroopyFoliagePlacer;
-import com.trufflez.tsarcanum.world.feature.tree.custom.TsLargeFoliagePlacer;
+import com.trufflez.tsarcanum.world.feature.tree.foliageplacer.TsDroopyFoliagePlacer;
+import com.trufflez.tsarcanum.world.feature.tree.foliageplacer.TsLargeFoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 
 public class TsFoliagePlacers {
