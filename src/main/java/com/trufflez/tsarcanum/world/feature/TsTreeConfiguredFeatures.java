@@ -86,7 +86,7 @@ public class TsTreeConfiguredFeatures {
     private static Builder elm() {
         return (new Builder(BlockStateProvider.of(TsBlocks.ELM_LOG),
                 new TsSpreadTrunkPlacer(8, 0, 0,
-                        UniformIntProvider.create(3, 3), // branch start height
+                        UniformIntProvider.create(0, 0), // branch start height
                         UniformIntProvider.create(3, 3), // branch number
                         UniformIntProvider.create(6, 6)  // bend length of main branch
                         ),
