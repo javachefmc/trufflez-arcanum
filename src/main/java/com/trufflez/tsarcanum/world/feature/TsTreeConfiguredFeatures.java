@@ -8,7 +8,6 @@ import com.trufflez.tsarcanum.world.feature.tree.trunkplacer.TsLargeTrunkPlacer;
 import com.trufflez.tsarcanum.world.feature.tree.trunkplacer.TsRootedTrunkPlacer;
 import com.trufflez.tsarcanum.world.feature.tree.trunkplacer.TsSpreadTrunkPlacer;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -66,7 +65,7 @@ public class TsTreeConfiguredFeatures {
                 BlockStateProvider.of(TsBlocks.HEARTWOOD_LEAVES),
                 new TsLargeFoliagePlacer(
                         ConstantIntProvider.create(2),
-                        ConstantIntProvider.create(0)),
+                        ConstantIntProvider.create(0), 4),
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))))
                 .ignoreVines();
     }
@@ -85,12 +84,12 @@ public class TsTreeConfiguredFeatures {
 
     private static Builder elm() {
         return (new Builder(BlockStateProvider.of(TsBlocks.ELM_LOG),
-                new TsSpreadTrunkPlacer(8, 0, 0,
-                        UniformIntProvider.create(0, 0), // branch start height
-                        UniformIntProvider.create(3, 3), // branch number
-                        UniformIntProvider.create(6, 6)  // bend length of main branch
+                new TsSpreadTrunkPlacer(10, 0, 1,
+                        UniformIntProvider.create(0, 2), // branch start height
+                        UniformIntProvider.create(3, 4), // branch number
+                        UniformIntProvider.create(3, 5)  // bend length of main branch
                         ),
-                BlockStateProvider.of(Blocks.AIR),
+                BlockStateProvider.of(TsBlocks.ELM_LEAVES),
                 new LargeOakFoliagePlacer(
                         ConstantIntProvider.create(2),
                         ConstantIntProvider.create(4), 4),
