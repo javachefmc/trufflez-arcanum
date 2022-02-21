@@ -4,9 +4,9 @@
 
 This is a **fabric-only mod** that aims to recreate the wonder and allure of classic magic mods. It is inspired by historical alchemy, and will have strong emphasis on visuals and automation.
 
-```diff
-! Currently Pre-Alpha - this is barely close to finished!
-```
+> Currently Pre-Alpha - Incomplete, but showcases some of the ever increasing number of blocks, items, and worldgen features.
+
+> The Biome system since Minecraft 1.18/1.18.1 is still in development, so terrain work will not officially start until at 1.18.2 at the earliest.
 
 ## Planned Features
 - **Automatable alchemy** for extracting energy from materials
@@ -25,14 +25,15 @@ This is a **fabric-only mod** that aims to recreate the wonder and allure of cla
 
 ## Currently Implemented
 - Base models for workbench, staves, alembic, and vitriol
-- Four tree types with respective wood variants, plank variants, leaves, and saplings
+- Four new tree types with entirely custom (but work-in-progress) shapes
+    - Their respective log/wood/stripped variants, leaves, plank variants, stairs, and slabs
 - Crafting recipes, furnace recipes, and blast furnace recipes
-- Some textures
+- Base texture work
 
 ## Common Questions
 - **When will this be done?**
 
-Not sure. I'm a novice modder and life is a thing. I'll have updates on my [YouTube channel](https://www.youtube.com/c/trufflezmc) and eventually a Discord.
+Not sure. I'm a novice modder and life is a thing. Major updates will be on my [YouTube channel](https://www.youtube.com/c/trufflezmc); in the meantime, you can always [check commits](https://github.com/trufflezmc/trufflez-arcanum/commits/master).
 
 - **Will you support older Minecraft versions?**
 
@@ -40,7 +41,7 @@ This mod depends on features from 1.17 and the upcoming 1.19 update, so, no.
 
 - **Can you implement X feature?**
 
-Maybe! I'm always open to suggestions.
+Maybe! I'm always open to suggestions. There will eventually be a Discord server to make this process easier.
 
 - **Did X feature rip off Y mod?**
 

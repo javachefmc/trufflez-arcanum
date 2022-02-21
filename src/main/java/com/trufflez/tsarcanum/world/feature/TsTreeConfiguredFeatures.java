@@ -6,7 +6,7 @@ import com.trufflez.tsarcanum.world.feature.tree.foliageplacer.TsDroopyFoliagePl
 import com.trufflez.tsarcanum.world.feature.tree.foliageplacer.TsLargeFoliagePlacer;
 import com.trufflez.tsarcanum.world.feature.tree.trunkplacer.TsLargeTrunkPlacer;
 import com.trufflez.tsarcanum.world.feature.tree.trunkplacer.TsRootedTrunkPlacer;
-import com.trufflez.tsarcanum.world.feature.tree.trunkplacer.TsSpreadTrunkPlacer;
+import com.trufflez.tsarcanum.world.feature.tree.trunkplacer.TsBranchyTrunkPlacer;
 import net.minecraft.block.Block;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
@@ -84,7 +84,7 @@ public class TsTreeConfiguredFeatures {
 
     private static Builder elm() {
         return (new Builder(BlockStateProvider.of(TsBlocks.ELM_LOG),
-                new TsSpreadTrunkPlacer(10, 0, 1,
+                new TsBranchyTrunkPlacer(10, 1, 2,
                         UniformIntProvider.create(0, 2), // branch start height
                         UniformIntProvider.create(3, 4), // branch number
                         UniformIntProvider.create(3, 5)  // bend length of main branch

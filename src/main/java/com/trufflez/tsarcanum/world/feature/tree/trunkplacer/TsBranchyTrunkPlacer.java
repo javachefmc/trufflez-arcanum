@@ -19,14 +19,14 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.BiConsumer;
 
-public class TsSpreadTrunkPlacer extends TrunkPlacer {
+public class TsBranchyTrunkPlacer extends TrunkPlacer {
 
     public static final double circle = 6.28;
     
     //public static final Codec<TsSpreadTrunkPlacer> CODEC = RecordCodecBuilder.create((instance) ->
     //        fillTrunkPlacerFields(instance).apply(instance, TsSpreadTrunkPlacer::new));
 
-    public static final Codec<TsSpreadTrunkPlacer> CODEC = RecordCodecBuilder.create((instance) -> {
+    public static final Codec<TsBranchyTrunkPlacer> CODEC = RecordCodecBuilder.create((instance) -> {
         return fillTrunkPlacerFields(instance).and(instance.group(
                 IntProvider.createValidatingCodec(1, 10).fieldOf("branch_count").forGetter((placer) -> {
                     return placer.branchCount;
@@ -37,14 +37,14 @@ public class TsSpreadTrunkPlacer extends TrunkPlacer {
                 IntProvider.createValidatingCodec(0, 100).fieldOf("branch_start").forGetter((placer) -> {
                     return placer.branchStart;
                 })
-        )).apply(instance, TsSpreadTrunkPlacer::new);
+        )).apply(instance, TsBranchyTrunkPlacer::new);
     });
 
     private final IntProvider branchCount;
     private final IntProvider bendLength;
     private final IntProvider branchStart;
     
-    public TsSpreadTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight, IntProvider branchStart, IntProvider branchCount, IntProvider bendLength) {
+    public TsBranchyTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight, IntProvider branchStart, IntProvider branchCount, IntProvider bendLength) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
         this.branchStart = branchStart;
         this.branchCount = branchCount;
@@ -66,7 +66,7 @@ public class TsSpreadTrunkPlacer extends TrunkPlacer {
     
     @Override
     protected TrunkPlacerType<?> getType() {
-        return TsTrunkPlacers.SPREAD_TRUNK_PLACER;
+        return TsTrunkPlacers.BRANCHY_TRUNK_PLACER;
     }
 
     @Override
@@ -77,25 +77,8 @@ public class TsSpreadTrunkPlacer extends TrunkPlacer {
         
         /*
         
-        Below is what I want to do, and hopefully someone smart (or I) can implement this
-        
-        Parameters we will need:
-        - Height of tree
-        - # of branches total
-        - Width of tree (branch bend length)
-        - Height at which new branches start
-        
-        One branch will be the main branch, and the rest will come off of it
-        
-        1. Get starting branch angle (random number)
-        2. Calculate path of main branch based on horizontal bend and tree height ?
-        3. Divide circle by # of branches for horizontal spread
-        4. Divide (tree max height - branch start height) by # of branches for vertical spread
-        5. For each additional branch:
-            1. Choose angle from calculated list of angles
-            2. Decrease branch bend length by inverse function of height
-            3. Assign branch height by inverse function of height
-            4. Assign foliage placer 
+        To implement:
+        - branch max height (we already have branch min height)
         
          */
         
@@ -138,18 +121,6 @@ public class TsSpreadTrunkPlacer extends TrunkPlacer {
                     .offset(Direction.Axis.Y, branchHeights[i] );
         }
         
-        {
-            //System.out.println("Creating tree with properties:");
-            //System.out.println("Starting angle: " + angle);
-            //System.out.println("SizeX/Z: "+sizeX+", "+sizeZ);
-            //System.out.println("Main branch bend length: "+mainBend);
-            //System.out.println("Main branch height: "+height); // not yet randomized
-            //System.out.println("BranchStart Height: " + thisBranchStart);
-            //System.out.println("BranchCount: " + thisBranchCount);
-            //System.out.println("BranchHeights: " + Arrays.toString(branchHeights));
-            //System.out.println("BranchAngles: " + Arrays.toString(branchAngles));
-        }
-        
         List<FoliagePlacer.TreeNode> FoliageList = new ArrayList<>();
         
         //Branches that are 25 degrees apart can merge. "Fixed" above by adding constant to branch bend width
@@ -176,15 +147,6 @@ public class TsSpreadTrunkPlacer extends TrunkPlacer {
         int branchLength = (int) Math.sqrt( Math.pow(horizontalLength, 2) + Math.pow(branchHeight, 2) );
         // linear interpolation for now. branchLength is essentially the number of times a block will need to be placed
         
-        {
-//        System.out.println("Creating branch with properties:");
-//        System.out.println("Angle: "+angle);
-//        System.out.println("SizeX/Z: "+sizeX+", "+sizeZ);
-//        System.out.println("Bend Length: "+bendLength);
-//        System.out.println("Height: "+branchHeight); // not yet randomized
-//        System.out.println("Branch length: "+branchLength);
-        }
-        
         System.out.println("Current branch angle: " + angle);
         
         float yMoveMult = (float) branchHeight / branchLength; // vertical step amount
@@ -193,8 +155,8 @@ public class TsSpreadTrunkPlacer extends TrunkPlacer {
         int yPos = 0;
         
         for(int i = 0; i < branchLength; ++i) { // loop over main branch length, not tree height (some branches may be horizontal)
-            yPos = (int) (i * yMoveMult); // Operating block height; Warning: int cast floors
-            yPercent = (float) i / branchLength; // Current percent of height. Also, this cast again!
+            yPos = (int) (i * yMoveMult); // Operating block height; Warning: int cast floors. Sometimes this results in a shorter branch, I think
+            yPercent = (float) i / branchLength; // Current percent of height
             
             getAndSetState(world, replacer, random, startPos.up( yPos )
                     .offset(Direction.Axis.X, (int) ( yPercent * sizeX ))

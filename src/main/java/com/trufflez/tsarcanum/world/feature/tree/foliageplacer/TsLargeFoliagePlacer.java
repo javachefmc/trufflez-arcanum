@@ -22,7 +22,6 @@ public class TsLargeFoliagePlacer extends BlobFoliagePlacer {
     public static final Codec<TsLargeFoliagePlacer> CODEC = RecordCodecBuilder.create((instance) ->
             createCodec(instance).apply(instance, TsLargeFoliagePlacer::new));
     
-    
     public TsLargeFoliagePlacer(IntProvider intProvider, IntProvider intProvider2, int i) {
         super(intProvider, intProvider2, i);
     }
@@ -36,7 +35,6 @@ public class TsLargeFoliagePlacer extends BlobFoliagePlacer {
             int j = radius + (i != offset && i != offset - foliageHeight ? 1 : 0);
             this.generateSquare(world, replacer, random, config, treeNode.getCenter(), j, i, treeNode.isGiantTrunk());
         }
-
     }
 
     public int getRandomHeight(Random random, int trunkHeight, TreeFeatureConfig config) {
