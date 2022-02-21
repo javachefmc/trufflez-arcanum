@@ -1,4 +1,4 @@
-![Trufflez' Arcanum](https://i.imgur.com/1iIHOTM.png)
+![Trufflez' Arcanum](https://i.imgur.com/fBcujn8.png)
 
 ### *"Any sufficiently advanced technology is indistinguishable from magic."*
 
@@ -47,7 +47,12 @@ Maybe! I'm always open to suggestions. There will eventually be a Discord server
 
 Probably not. Each feature was designed from a blank slate with tons of historical research. For this reason, many concepts and terminology overlap other mods.
 
-
 - **Will this be available on Forge?**
 
 No.
+
+## Links
+
+**Modrinth:** https://modrinth.com/mod/trufflez-arcanum
+<br/>
+**CurseForge:** https://www.curseforge.com/minecraft/mc-mods/trufflez-arcanum
