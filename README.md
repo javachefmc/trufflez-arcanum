@@ -2,7 +2,7 @@
 
 ### *"Any sufficiently advanced technology is indistinguishable from magic."*
 
-This is a **fabric-only mod** that aims to recreate the wonder and allure of classic magic mods. It is inspired by historical alchemy, and will have strong emphasis on visuals and automation.
+This is a **fabric-only mod** that aims to recreate the atmosphere of classic magic mods. It is inspired by historical alchemy, and will have strong emphasis on visuals and automation.
 
 > Currently Pre-Alpha - Incomplete, but showcases some of the ever increasing number of blocks, items, and worldgen features.
 
@@ -11,9 +11,9 @@ This is a **fabric-only mod** that aims to recreate the wonder and allure of cla
 ## Planned Features
 - **Automatable alchemy** for extracting energy from materials
 - **Wisps**, sentient beings that grant the player abilities and control the balance of the world
-- **Staves** with selectable foci; provides unique tools and weapons
+- **Staves** with selectable foci - a unique tool and weapon system
 - **World generation** - resources, biomes, tree types, and structures
-- **Progression system** based on exploration and crafting (rather than scanning and research)
+- **Progression** based on exploration and crafting (rather than scanning and research)
 - A **really special book** that hints at lore and progression as the player discovers more
 - **Good looking blocks** - loads of wood types, building blocks, furniture, and lighting options
 - **Really cool effects** for staves, alchemy, and wherever else I can make something look good
@@ -25,7 +25,7 @@ This is a **fabric-only mod** that aims to recreate the wonder and allure of cla
 
 ## Currently Implemented
 - Base models for workbench, staves, alembic, and vitriol
-- Four new tree types with entirely custom (but work-in-progress) shapes
+- Four new tree types with entirely custom (but work-in-progress) generation
     - Their respective log/wood/stripped variants, leaves, plank variants, stairs, and slabs
 - Crafting recipes, furnace recipes, and blast furnace recipes
 - Base texture work
