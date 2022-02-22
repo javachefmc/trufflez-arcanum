@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "tsarcanum:block/myrtle_leaves"
+  }
+}

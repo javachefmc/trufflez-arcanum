@@ -21,6 +21,8 @@ public class TsBlockProperties {
         AxeItem.STRIPPED_BLOCKS.put(TsBlocks.WILLOW_WOOD, TsBlocks.STRIPPED_WILLOW_WOOD);
         AxeItem.STRIPPED_BLOCKS.put(TsBlocks.ELM_LOG, TsBlocks.STRIPPED_ELM_LOG);
         AxeItem.STRIPPED_BLOCKS.put(TsBlocks.ELM_WOOD, TsBlocks.STRIPPED_ELM_WOOD);
+        AxeItem.STRIPPED_BLOCKS.put(TsBlocks.MYRTLE_LOG, TsBlocks.STRIPPED_MYRTLE_LOG);
+        AxeItem.STRIPPED_BLOCKS.put(TsBlocks.MYRTLE_WOOD, TsBlocks.STRIPPED_MYRTLE_WOOD);
     }
     
     public static void init(){
@@ -64,26 +66,42 @@ public class TsBlockProperties {
         FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.ELM_STAIRS, 2, 10);
         FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.ELM_SLAB, 2, 10);
 
+        FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.MYRTLE_LOG, 2, 2);
+        FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.MYRTLE_WOOD, 2, 2);
+        FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.STRIPPED_MYRTLE_LOG, 2, 2);
+        FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.STRIPPED_MYRTLE_WOOD, 2, 2);
+        FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.MYRTLE_PLANKS, 4, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.MYRTLE_LEAVES, 100, 600);
+        FlammableBlockRegistry.getDefaultInstance().add(TsSaplings.MYRTLE_SAPLING, 100, 600);
+        FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.MYRTLE_STAIRS, 2, 10);
+        FlammableBlockRegistry.getDefaultInstance().add(TsBlocks.MYRTLE_SLAB, 2, 10);
+        
+        // Composting
         CompostingChanceRegistry.INSTANCE.add(TsBlocks.GREAT_OAK_LEAVES, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(TsBlocks.HEARTWOOD_LEAVES, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(TsBlocks.WILLOW_LEAVES, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(TsBlocks.ELM_LEAVES, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(TsBlocks.MYRTLE_LEAVES, 0.30f);
+        
         CompostingChanceRegistry.INSTANCE.add(TsSaplings.GREAT_OAK_SAPLING, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(TsSaplings.HEARTWOOD_SAPLING, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(TsSaplings.WILLOW_SAPLING, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(TsSaplings.ELM_SAPLING, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(TsSaplings.MYRTLE_SAPLING, 0.30f);
 
         // Tinted block registry
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> world != null && pos != null ? TsFoliageColors.getBiomeGreatOakLeavesColor(world, pos) : TsFoliageColors.getDefaultColor(), TsBlocks.GREAT_OAK_LEAVES);
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> TsFoliageColors.getHeartwoodLeavesColor(), TsBlocks.HEARTWOOD_LEAVES);
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> TsFoliageColors.getWillowLeavesColor(), TsBlocks.WILLOW_LEAVES);
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> TsFoliageColors.getElmLeavesColor(), TsBlocks.ELM_LEAVES);
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> TsFoliageColors.getMyrtleLeavesColor(), TsBlocks.MYRTLE_LEAVES);
 
         // Tinted item registry
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> TsFoliageColors.getGreatOakLeavesColor(), TsItems.GREAT_OAK_LEAVES_ITEM);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> TsFoliageColors.getHeartwoodLeavesColor(), TsItems.HEARTWOOD_LEAVES_ITEM);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> TsFoliageColors.getWillowLeavesColor(), TsItems.WILLOW_LEAVES_ITEM);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> TsFoliageColors.getElmLeavesColor(), TsItems.ELM_LEAVES_ITEM);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> TsFoliageColors.getMyrtleLeavesColor(), TsItems.MYRTLE_LEAVES_ITEM);
        
         addStrippables();
     }

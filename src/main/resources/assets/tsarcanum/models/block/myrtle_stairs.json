@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "tsarcanum:block/myrtle_planks",
+    "top": "tsarcanum:block/myrtle_planks",
+    "side": "tsarcanum:block/myrtle_planks"
+  }
+}

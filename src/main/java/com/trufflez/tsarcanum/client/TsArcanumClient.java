@@ -27,6 +27,8 @@ public class TsArcanumClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.HEARTWOOD_SAPLING);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.WILLOW_SAPLING);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.ELM_SAPLING);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.MYRTLE_SAPLING);
+        
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), TsBlocks.VITRIOL);
 
         //BlockRenderLayerMap.INSTANCE.putItems(RenderLayer.getTranslucent(), TsItems.GREAT_OAK_STAFF);
@@ -38,6 +40,8 @@ public class TsArcanumClient implements ClientModInitializer {
             }
             return livingEntity.getActiveItem() != itemStack ? 0.0F : (itemStack.getMaxUseTime() - livingEntity.getItemUseTimeLeft()) / 20.0F;
         });*/
+        
+        // TODO: Remove
 
         FabricModelPredicateProviderRegistry.register(TsItems.HEARTWOOD_STAFF, new Identifier("charged"), (itemStack, clientWorld, livingEntity, i) -> {
             if (livingEntity == null) {

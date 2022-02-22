@@ -32,6 +32,7 @@ public class TsTreeConfiguredFeatures {
     public static final ConfiguredFeature<TreeFeatureConfig, ?> HEARTWOOD;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> WILLOW;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> ELM;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> MYRTLE;
     
     private static Builder standard(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
         return new Builder(BlockStateProvider.of(log),
@@ -97,6 +98,21 @@ public class TsTreeConfiguredFeatures {
         )).ignoreVines();
     }
 
+    private static Builder myrtle() {
+        return (new Builder(BlockStateProvider.of(TsBlocks.MYRTLE_LOG),
+                new TsBranchyTrunkPlacer(10, 1, 2,
+                        UniformIntProvider.create(0, 2), // branch start height
+                        UniformIntProvider.create(3, 4), // branch number
+                        UniformIntProvider.create(3, 5)  // bend length of main branch
+                ),
+                BlockStateProvider.of(TsBlocks.MYRTLE_LEAVES),
+                new LargeOakFoliagePlacer(
+                        ConstantIntProvider.create(2),
+                        ConstantIntProvider.create(4), 4),
+                new TwoLayersFeatureSize(1, 0, 1)
+        )).ignoreVines();
+    }
+
     private static Builder fancyOak() { // default large oak generation
         return (new Builder(BlockStateProvider.of(TsBlocks.ELM_LOG),
                 new LargeOakTrunkPlacer(3, 11, 0),
@@ -118,6 +134,7 @@ public class TsTreeConfiguredFeatures {
         HEARTWOOD = ConfiguredFeatures.register("heartwood", Feature.TREE.configure(heartwood().build()));
         WILLOW = ConfiguredFeatures.register("willow", Feature.TREE.configure(willow().build()));
         ELM = ConfiguredFeatures.register("elm", Feature.TREE.configure(elm().build()));
+        MYRTLE = ConfiguredFeatures.register("myrtle", Feature.TREE.configure(myrtle().build()));
     }
     
     public static void init() {

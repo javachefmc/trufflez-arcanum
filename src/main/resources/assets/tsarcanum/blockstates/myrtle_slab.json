@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tsarcanum:block/myrtle_slab"
+    },
+    "type=top": {
+      "model": "tsarcanum:block/myrtle_slab_top"
+    },
+    "type=double": {
+      "model": "tsarcanum:block/myrtle_planks"
+    }
+  }
+}

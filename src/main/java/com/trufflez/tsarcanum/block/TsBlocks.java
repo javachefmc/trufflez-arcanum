@@ -66,6 +66,15 @@ public class TsBlocks {
     public static final Block STRIPPED_ELM_WOOD;
     public static final Block ELM_STAIRS;
     public static final Block ELM_SLAB;
+
+    public static final Block MYRTLE_LOG;
+    public static final Block MYRTLE_WOOD;
+    public static final Block MYRTLE_PLANKS;
+    public static final Block MYRTLE_LEAVES;
+    public static final Block STRIPPED_MYRTLE_LOG;
+    public static final Block STRIPPED_MYRTLE_WOOD;
+    public static final Block MYRTLE_STAIRS;
+    public static final Block MYRTLE_SLAB;
     
     public static final Block VITRIOL;
     
@@ -158,7 +167,16 @@ public class TsBlocks {
         STRIPPED_ELM_WOOD = register("stripped_elm_wood", createLogBlock(BlockSoundGroup.WOOD));
         ELM_SLAB = register("elm_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
         ELM_STAIRS = register("elm_stairs", new TsStairsBlock(TsBlocks.ELM_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-        
+
+        MYRTLE_LOG = register("myrtle_log", createLogBlock(BlockSoundGroup.WOOD));
+        MYRTLE_WOOD = register("myrtle_wood", createLogBlock(BlockSoundGroup.WOOD));
+        MYRTLE_PLANKS = register("myrtle_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
+        MYRTLE_LEAVES = registerCustom("myrtle_leaves", createLeavesBlock());
+        STRIPPED_MYRTLE_LOG = register("stripped_myrtle_log", createLogBlock(BlockSoundGroup.WOOD));
+        STRIPPED_MYRTLE_WOOD = register("stripped_myrtle_wood", createLogBlock(BlockSoundGroup.WOOD));
+        MYRTLE_SLAB = register("myrtle_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
+        MYRTLE_STAIRS = register("myrtle_stairs", new TsStairsBlock(TsBlocks.MYRTLE_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
+
         VITRIOL = register("vitriol", new VitriolBlock(FabricBlockSettings.of(Material.GLASS).breakByHand(true).sounds(BlockSoundGroup.AMETHYST_CLUSTER).nonOpaque().luminance(8).dynamicBounds().noCollision()));
     }
     

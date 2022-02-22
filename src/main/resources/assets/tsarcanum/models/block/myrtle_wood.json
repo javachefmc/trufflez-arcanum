@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "tsarcanum:block/myrtle_log",
+    "side": "tsarcanum:block/myrtle_log"
+  }
+}

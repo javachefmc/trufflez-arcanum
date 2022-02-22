@@ -23,11 +23,13 @@
   "item.tsarcanum.heartwood_staff_core": "Heartwood Staff Core",
   "item.tsarcanum.willow_staff_core": "Willow Staff Core",
   "item.tsarcanum.elm_staff_core": "Elm Staff Core",
+  "item.tsarcanum.myrtle_staff_core": "Myrtle Staff Core",
   
   "item.tsarcanum.great_oak_staff": "Great Oak Staff",
   "item.tsarcanum.heartwood_staff": "Heartwood Staff",
   "item.tsarcanum.willow_staff": "Willow Staff",
   "item.tsarcanum.elm_staff": "Elm Staff",
+  "item.tsarcanum.myrtle_staff": "Myrtle Staff",
 
   "block.tsarcanum.auric_workbench": "§6Auric Workbench",
   "block.tsarcanum.staff_pedestal": "Staff Pedestal",
@@ -70,5 +72,15 @@
   "block.tsarcanum.stripped_elm_wood": "Stripped Elm Wood",
   "block.tsarcanum.elm_sapling": "Elm Sapling",
   "block.tsarcanum.elm_stairs": "Elm Stairs",
-  "block.tsarcanum.elm_slab": "Elm Slab"
+  "block.tsarcanum.elm_slab": "Elm Slab",
+
+  "block.tsarcanum.myrtle_log": "Myrtle Log",
+  "block.tsarcanum.myrtle_wood": "Myrtle Wood",
+  "block.tsarcanum.myrtle_planks": "Myrtle Planks",
+  "block.tsarcanum.myrtle_leaves": "Myrtle Leaves",
+  "block.tsarcanum.stripped_myrtle_log": "Stripped Myrtle Log",
+  "block.tsarcanum.stripped_myrtle_wood": "Stripped Myrtle Wood",
+  "block.tsarcanum.myrtle_sapling": "Myrtle Sapling",
+  "block.tsarcanum.myrtle_stairs": "Myrtle Stairs",
+  "block.tsarcanum.myrtle_slab": "Myrtle Slab"
 }

@@ -24,11 +24,13 @@ public class TsSaplings {
     public static final TsSaplingBlock HEARTWOOD_SAPLING;
     public static final TsSaplingBlock WILLOW_SAPLING;
     public static final TsSaplingBlock ELM_SAPLING;
+    public static final TsSaplingBlock MYRTLE_SAPLING;
     
     public static final BlockItem GREAT_OAK_SAPLING_ITEM;
     public static final BlockItem HEARTWOOD_SAPLING_ITEM;
     public static final BlockItem WILLOW_SAPLING_ITEM;
     public static final BlockItem ELM_SAPLING_ITEM;
+    public static final BlockItem MYRTLE_SAPLING_ITEM;
     
     public TsSaplings() {}
 
@@ -62,11 +64,13 @@ public class TsSaplings {
         HEARTWOOD_SAPLING = register("heartwood_sapling", TsTreeConfiguredFeatures.HEARTWOOD);
         WILLOW_SAPLING = register("willow_sapling", TsTreeConfiguredFeatures.WILLOW);
         ELM_SAPLING = register("elm_sapling", TsTreeConfiguredFeatures.ELM);
+        MYRTLE_SAPLING = register("myrtle_sapling", TsTreeConfiguredFeatures.MYRTLE);
 
         GREAT_OAK_SAPLING_ITEM = register("great_oak_sapling", blockItem(GREAT_OAK_SAPLING));
         HEARTWOOD_SAPLING_ITEM = register("heartwood_sapling", blockItem(HEARTWOOD_SAPLING));
         WILLOW_SAPLING_ITEM = register("willow_sapling", blockItem(WILLOW_SAPLING));
         ELM_SAPLING_ITEM = register("elm_sapling", blockItem(ELM_SAPLING));
+        MYRTLE_SAPLING_ITEM = register("myrtle_sapling", blockItem(MYRTLE_SAPLING));
     }
 
     public static void init() {

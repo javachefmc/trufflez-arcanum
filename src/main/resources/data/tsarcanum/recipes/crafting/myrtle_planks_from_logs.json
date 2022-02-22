@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "tsarcanum:myrtle_logs"
+    }
+  ],
+  "result": {
+    "item": "tsarcanum:myrtle_planks",
+    "count": 4
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "tsarcanum:block/myrtle_sapling"
+  }
+}
