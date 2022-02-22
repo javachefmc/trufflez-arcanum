@@ -55,7 +55,7 @@ public class TsItems {
         HEARTWOOD_LEAVES_ITEM = register("heartwood_leaves", blockItem(TsBlocks.HEARTWOOD_LEAVES));
         WILLOW_LEAVES_ITEM = register("willow_leaves", blockItem(TsBlocks.WILLOW_LEAVES));
         ELM_LEAVES_ITEM = register("elm_leaves", blockItem(TsBlocks.ELM_LEAVES));
-        MYRTLE_LEAVES_ITEM = register("elm_leaves", blockItem(TsBlocks.MYRTLE_LEAVES));
+        MYRTLE_LEAVES_ITEM = register("myrtle_leaves", blockItem(TsBlocks.MYRTLE_LEAVES));
 
         COPPER_SHEET = register("copper_sheet", new Item(new FabricItemSettings().maxCount(16).group(TsItemGroups.MAIN)));
         REFRACTORY_CLAY_BRICK = register("refractory_clay_brick", new Item(new FabricItemSettings().group(TsItemGroups.MAIN)));

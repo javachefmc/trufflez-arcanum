@@ -86,9 +86,9 @@ public class TsTreeConfiguredFeatures {
     private static Builder elm() {
         return (new Builder(BlockStateProvider.of(TsBlocks.ELM_LOG),
                 new TsBranchyTrunkPlacer(10, 1, 2,
-                        UniformIntProvider.create(0, 2), // branch start height
-                        UniformIntProvider.create(3, 4), // branch number
-                        UniformIntProvider.create(3, 5)  // bend length of main branch
+                        UniformIntProvider.create(1, 3), // branch start height
+                        UniformIntProvider.create(2, 3), // extra branch count
+                        UniformIntProvider.create(2, 3)  // bend length of main branch
                         ),
                 BlockStateProvider.of(TsBlocks.ELM_LEAVES),
                 new LargeOakFoliagePlacer(
@@ -100,10 +100,10 @@ public class TsTreeConfiguredFeatures {
 
     private static Builder myrtle() {
         return (new Builder(BlockStateProvider.of(TsBlocks.MYRTLE_LOG),
-                new TsBranchyTrunkPlacer(10, 1, 2,
-                        UniformIntProvider.create(0, 2), // branch start height
-                        UniformIntProvider.create(3, 4), // branch number
-                        UniformIntProvider.create(3, 5)  // bend length of main branch
+                new TsBranchyTrunkPlacer(15, 1, 2,
+                        UniformIntProvider.create(0, 0), // branch start height
+                        UniformIntProvider.create(4, 6), // extra branch count
+                        UniformIntProvider.create(5, 7)  // bend length of main branch
                 ),
                 BlockStateProvider.of(TsBlocks.MYRTLE_LEAVES),
                 new LargeOakFoliagePlacer(

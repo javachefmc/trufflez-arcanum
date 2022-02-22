@@ -21,24 +21,16 @@ import java.util.function.BiConsumer;
 
 public class TsBranchyTrunkPlacer extends TrunkPlacer {
 
-    public static final double circle = 6.28;
+    public static final double circle = 6.28; // this is in radians
     
     //public static final Codec<TsSpreadTrunkPlacer> CODEC = RecordCodecBuilder.create((instance) ->
     //        fillTrunkPlacerFields(instance).apply(instance, TsSpreadTrunkPlacer::new));
 
-    public static final Codec<TsBranchyTrunkPlacer> CODEC = RecordCodecBuilder.create((instance) -> {
-        return fillTrunkPlacerFields(instance).and(instance.group(
-                IntProvider.createValidatingCodec(1, 10).fieldOf("branch_count").forGetter((placer) -> {
-                    return placer.branchCount;
-                }),
-                IntProvider.createValidatingCodec(1, 10).fieldOf("bend_length").forGetter((placer) -> {
-                    return placer.bendLength;
-                }),
-                IntProvider.createValidatingCodec(0, 100).fieldOf("branch_start").forGetter((placer) -> {
-                    return placer.branchStart;
-                })
-        )).apply(instance, TsBranchyTrunkPlacer::new);
-    });
+    public static final Codec<TsBranchyTrunkPlacer> CODEC = RecordCodecBuilder.create((instance) -> fillTrunkPlacerFields(instance).and(instance.group(
+            IntProvider.createValidatingCodec(1, 10).fieldOf("branch_count").forGetter((placer) -> placer.branchCount),
+            IntProvider.createValidatingCodec(1, 10).fieldOf("bend_length").forGetter((placer) -> placer.bendLength),
+            IntProvider.createValidatingCodec(0, 100).fieldOf("branch_start").forGetter((placer) -> placer.branchStart)
+    )).apply(instance, TsBranchyTrunkPlacer::new));
 
     private final IntProvider branchCount;
     private final IntProvider bendLength;
@@ -74,7 +66,6 @@ public class TsBranchyTrunkPlacer extends TrunkPlacer {
         
         setToDirt(world, replacer, random, startPos.down(), config);
         
-        
         /*
         
         To implement:
@@ -82,60 +73,74 @@ public class TsBranchyTrunkPlacer extends TrunkPlacer {
         
          */
         
-        
-        
         // I will start with linear interpolation and figure out curves later
+
+        List<FoliagePlacer.TreeNode> FoliageList = new ArrayList<>();
         
         int angle = (int) Math.round( Math.random() * circle ); // random angle in radians
         
-        int mainBend = bendLength.get(random);
         int thisBranchCount = branchCount.get(random);
         int thisBranchStart = branchStart.get(random);
-
-        float sizeX = TsMath.sin(angle) * mainBend,
-                sizeZ = TsMath.cos(angle) * mainBend; // for main branch
         
-        int mainBranchLength;
+        int thisBendLength = bendLength.get(random);
+        float sizeX = TsMath.sin(angle) * thisBendLength,
+                sizeZ = TsMath.cos(angle) * thisBendLength;
         
-        int[] branchHeights = new int[thisBranchCount - 1];
-        int[] branchAngles = new int[thisBranchCount - 1];
-        int[] branchSizesY = new int[thisBranchCount - 1];
-        int[] branchBends = new int[thisBranchCount - 1];
+        //int mainBranchLength;
         
-        BlockPos[] branchPositions = new BlockPos[thisBranchCount - 1];
+//        int[] branchHeights = new int[thisBranchCount - 1];
+//        int[] branchAngles = new int[thisBranchCount - 1];
+//        int[] branchSizesY = new int[thisBranchCount - 1];
+//        int[] branchBends = new int[thisBranchCount - 1];
         
+        //BlockPos[] branchPositions = new BlockPos[thisBranchCount];
+        
+        makeBranch(world, replacer, random, config, FoliageList, startPos, angle, height, thisBendLength);
+        
+        int branchHeight;
         float branchHeightPercentage; // init outside loop
         
-        for(int i = 0; i < branchHeights.length; i++) {
-            branchHeights[i] = (int) thisBranchStart + ( i * ( ( height - thisBranchStart ) / ( thisBranchCount - 1 ) ) );
+        for(int i = 0; i < ( thisBranchCount ); i++) {
+            
+            branchHeight = (int) thisBranchStart + ( i * ( ( height - thisBranchStart ) / thisBranchCount ) );
+            branchHeightPercentage = (float) branchHeight / height;
+            
+            /*branchHeights[i] = (int) thisBranchStart + ( i * ( ( height - thisBranchStart ) / ( thisBranchCount - 1 ) ) );
             branchAngles[i] = (int) ( ( i + 1 ) * ( circle / thisBranchCount ) ) + angle; // ok if angles roll over 360
             
-            branchHeightPercentage = (float) branchHeights[i] / height;
+            float branchHeightPercentage = (float) branchHeights[i] / height;
             
             branchSizesY[i] = (int) ( (1 - branchHeightPercentage) * height);
-            branchBends[i] = (int) ( (1 - branchHeightPercentage) * bendLength.get(random) ) + 2;
+            branchBends[i] = (int) ( (1 - branchHeightPercentage) * thisBendLength ) + 2;
             
             branchPositions[i] = startPos
-                    .offset(Direction.Axis.X, (int) ( branchHeightPercentage * sizeX ))
-                    .offset(Direction.Axis.Z, (int) ( branchHeightPercentage * sizeZ ))
-                    .offset(Direction.Axis.Y, branchHeights[i] );
+                    .offset(Direction.Axis.X, (int) (branchHeightPercentage * sizeX))
+                    .offset(Direction.Axis.Z, (int) (branchHeightPercentage * sizeZ))
+                    .offset(Direction.Axis.Y, branchHeights[i]);*/
+
+            makeBranch(world, replacer, random, config, FoliageList,
+                    startPos.offset(Direction.Axis.X, (int) (branchHeightPercentage * sizeX))   // Branch Start Position
+                            .offset(Direction.Axis.Z, (int) (branchHeightPercentage * sizeZ))
+                            .offset(Direction.Axis.Y, branchHeight),
+                    (int) ( ( i + 1 ) * ( circle / thisBranchCount ) ) + angle,                 // Branch Angle
+                    (int) ( (1 - branchHeightPercentage) * height),                             // Branch Height
+                    (int) ( (1 - branchHeightPercentage) * bendLength.get(random) ) + 4                 // Branch Horizontal Length
+            );
         }
         
-        List<FoliagePlacer.TreeNode> FoliageList = new ArrayList<>();
+        
         
         //Branches that are 25 degrees apart can merge. "Fixed" above by adding constant to branch bend width
-        shuffleArray(branchAngles); 
+        //shuffleArray(branchAngles);
         
-        makeBranch(world, replacer, random, config, FoliageList, startPos, angle, height, mainBend);
-        
-        for(int i = 0; i < branchHeights.length; i++) {
+        /*for(int i = 0; i < branchHeights.length; i++) {
             makeBranch(world, replacer, random, config, FoliageList,
                     branchPositions[i],
                     branchAngles[i],
                     branchSizesY[i],
                     branchBends[i]
             );
-        }
+        }*/
         
         return FoliageList;
     }
@@ -147,15 +152,13 @@ public class TsBranchyTrunkPlacer extends TrunkPlacer {
         int branchLength = (int) Math.sqrt( Math.pow(horizontalLength, 2) + Math.pow(branchHeight, 2) );
         // linear interpolation for now. branchLength is essentially the number of times a block will need to be placed
         
-        System.out.println("Current branch angle: " + angle);
-        
-        float yMoveMult = (float) branchHeight / branchLength; // vertical step amount
+        float yStep = (float) branchHeight / branchLength; // vertical step amount
                                                                 // also, why can't I just divide these without the cast?
         float yPercent;
         int yPos = 0;
         
         for(int i = 0; i < branchLength; ++i) { // loop over main branch length, not tree height (some branches may be horizontal)
-            yPos = (int) (i * yMoveMult); // Operating block height; Warning: int cast floors. Sometimes this results in a shorter branch, I think
+            yPos = (int) (i * yStep); // Operating block height; Warning: int cast floors. Sometimes this results in a shorter branch, I think
             yPercent = (float) i / branchLength; // Current percent of height
             
             getAndSetState(world, replacer, random, startPos.up( yPos )
