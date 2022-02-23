@@ -6,7 +6,7 @@ This is a **fabric-only mod** that aims to recreate the atmosphere of classic ma
 
 > Currently Pre-Alpha - Incomplete, but showcases some of the ever increasing number of blocks, items, and worldgen features.
 
-> The Biome system since Minecraft 1.18/1.18.1 is still in development, so terrain work will not officially start until at 1.18.2 at the earliest.
+> Due to changes since Minecraft 1.18, biome modifications are currently incompatible with other biome mods/datapacks.
 
 ## Planned Features
 - **Automatable alchemy** for extracting energy from materials
@@ -47,7 +47,7 @@ Maybe! I'm always open to suggestions. There will eventually be a Discord server
 
 Probably not. Each feature was designed from a blank slate with tons of historical research. For this reason, many concepts and terminology overlap other mods.
 
-- **Will this be available on Forge?**
+- **Will this be available for Forge?**
 
 No.
 
@@ -56,3 +56,5 @@ No.
 **Modrinth:** https://modrinth.com/mod/trufflez-arcanum
 <br/>
 **CurseForge:** https://www.curseforge.com/minecraft/mc-mods/trufflez-arcanum
+<br/>
+**Wiki** https://trufflez-arcanum.fandom.com/wiki/Main_Page
