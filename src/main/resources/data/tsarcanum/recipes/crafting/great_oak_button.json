@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "tsarcanum:great_oak_planks"
+    }
+  ],
+  "result": {
+    "item": "tsarcanum:great_oak_button"
+  }
+}

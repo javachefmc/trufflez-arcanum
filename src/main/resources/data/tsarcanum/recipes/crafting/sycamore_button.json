@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "tsarcanum:sycamore_planks"
+    }
+  ],
+  "result": {
+    "item": "tsarcanum:sycamore_button"
+  }
+}

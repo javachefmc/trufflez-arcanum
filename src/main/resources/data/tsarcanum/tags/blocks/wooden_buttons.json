@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:great_oak_button",
+    "tsarcanum:heartwood_button",
+    "tsarcanum:willow_button",
+    "tsarcanum:elm_button",
+    "tsarcanum:myrtle_button",
+    "tsarcanum:sycamore_button"
+  ]
+}

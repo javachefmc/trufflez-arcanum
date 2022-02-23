@@ -29,6 +29,6 @@ public class TsBlockEntities {
     }
     
     public static void init() {
-        TsArcanum.LOGGER.info("Registering BlockEntities");
+        TsArcanum.LOGGER.debug("Registering BlockEntities");
     }
 }

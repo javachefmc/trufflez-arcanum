@@ -66,6 +66,6 @@ public class TsPlacedFeatures {
     }
     
     public static void init() {
-        TsArcanum.LOGGER.info("Registering PlacedFeatures");
+        TsArcanum.LOGGER.debug("Registering PlacedFeatures");
     }
 }

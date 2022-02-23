@@ -14,6 +14,6 @@ public abstract class TsBiomeKeys {
     }
     
     public static void init() {
-        TsArcanum.LOGGER.info("Registering biome keys");
+        TsArcanum.LOGGER.debug("Registering Biomes");
     }
 }

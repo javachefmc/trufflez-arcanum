@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:great_oak_fence",
+    "tsarcanum:heartwood_fence",
+    "tsarcanum:willow_fence",
+    "tsarcanum:elm_fence",
+    "tsarcanum:myrtle_fence",
+    "tsarcanum:sycamore_fence"
+  ]
+}

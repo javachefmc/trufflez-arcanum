@@ -57,6 +57,6 @@ public class TsConfiguredFeatures {
     }
     
     public static void init() {
-        TsArcanum.LOGGER.info("Registering ConfiguredFeatures");
+        TsArcanum.LOGGER.debug("Registering ConfiguredFeatures");
     }
 }

@@ -78,6 +78,6 @@ public class TsSaplings {
     }
 
     public static void init() {
-        TsArcanum.LOGGER.info("Registering saplings");
+        TsArcanum.LOGGER.debug("Registering Saplings");
     }
 }

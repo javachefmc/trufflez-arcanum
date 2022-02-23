@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "tsarcanum:great_oak_pressure_plate",
+    "tsarcanum:heartwood_pressure_plate",
+    "tsarcanum:willow_pressure_plate",
+    "tsarcanum:elm_pressure_plate",
+    "tsarcanum:myrtle_pressure_plate",
+    "tsarcanum:sycamore_pressure_plate"
+  ]
+}

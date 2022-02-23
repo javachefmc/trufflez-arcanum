@@ -45,6 +45,10 @@
   "block.tsarcanum.great_oak_sapling": "Great Oak Sapling",
   "block.tsarcanum.great_oak_stairs": "Great Oak Stairs",
   "block.tsarcanum.great_oak_slab": "Great Oak Slab",
+  "block.tsarcanum.great_oak_button": "Great Oak Button",
+  "block.tsarcanum.great_oak_pressure_plate": "Great Oak Pressure Plate",
+  "block.tsarcanum.great_oak_fence": "Great Oak Fence",
+  "block.tsarcanum.great_oak_fence_gate": "Great Oak Fence Gate",
   
   "block.tsarcanum.heartwood_log": "Heartwood Log",
   "block.tsarcanum.heartwood_wood": "Heartwood Wood",
@@ -55,6 +59,10 @@
   "block.tsarcanum.heartwood_sapling": "Heartwood Sapling",
   "block.tsarcanum.heartwood_stairs": "Heartwood Stairs",
   "block.tsarcanum.heartwood_slab": "Heartwood Slab",
+  "block.tsarcanum.heartwood_button": "Heartwood Button",
+  "block.tsarcanum.heartwood_pressure_plate": "Heartwood Pressure Plate",
+  "block.tsarcanum.heartwood_fence": "Heartwood Fence",
+  "block.tsarcanum.heartwood_fence_gate": "Heartwood Fence Gate",
 
   "block.tsarcanum.willow_log": "Willow Log",
   "block.tsarcanum.willow_wood": "Willow Wood",
@@ -65,6 +73,10 @@
   "block.tsarcanum.willow_sapling": "Willow Sapling",
   "block.tsarcanum.willow_stairs": "Willow Stairs",
   "block.tsarcanum.willow_slab": "Willow Slab",
+  "block.tsarcanum.willow_button": "Willow Button",
+  "block.tsarcanum.willow_pressure_plate": "Willow Pressure Plate",
+  "block.tsarcanum.willow_fence": "Willow Fence",
+  "block.tsarcanum.willow_fence_gate": "Willow Fence Gate",
 
   "block.tsarcanum.elm_log": "Elm Log",
   "block.tsarcanum.elm_wood": "Elm Wood",
@@ -75,6 +87,10 @@
   "block.tsarcanum.elm_sapling": "Elm Sapling",
   "block.tsarcanum.elm_stairs": "Elm Stairs",
   "block.tsarcanum.elm_slab": "Elm Slab",
+  "block.tsarcanum.elm_button": "Elm Button",
+  "block.tsarcanum.elm_pressure_plate": "Elm Pressure Plate",
+  "block.tsarcanum.elm_fence": "Elm Fence",
+  "block.tsarcanum.elm_fence_gate": "Elm Fence Gate",
 
   "block.tsarcanum.myrtle_log": "Myrtle Log",
   "block.tsarcanum.myrtle_wood": "Myrtle Wood",
@@ -85,6 +101,10 @@
   "block.tsarcanum.myrtle_sapling": "Myrtle Sapling",
   "block.tsarcanum.myrtle_stairs": "Myrtle Stairs",
   "block.tsarcanum.myrtle_slab": "Myrtle Slab",
+  "block.tsarcanum.myrtle_button": "Myrtle Button",
+  "block.tsarcanum.myrtle_pressure_plate": "Myrtle Pressure Plate",
+  "block.tsarcanum.myrtle_fence": "Myrtle Fence",
+  "block.tsarcanum.myrtle_fence_gate": "Myrtle Fence Gate",
   
   "block.tsarcanum.sycamore_log": "Sycamore Log",
   "block.tsarcanum.sycamore_wood": "Sycamore Wood",
@@ -94,5 +114,9 @@
   "block.tsarcanum.stripped_sycamore_wood": "Stripped Sycamore Wood",
   "block.tsarcanum.sycamore_sapling": "Sycamore Sapling",
   "block.tsarcanum.sycamore_stairs": "Sycamore Stairs",
-  "block.tsarcanum.sycamore_slab": "Sycamore Slab"
+  "block.tsarcanum.sycamore_slab": "Sycamore Slab",
+  "block.tsarcanum.sycamore_button": "Sycamore Button",
+  "block.tsarcanum.sycamore_pressure_plate": "Sycamore Pressure Plate",
+  "block.tsarcanum.sycamore_fence": "Sycamore Fence",
+  "block.tsarcanum.sycamore_fence_gate": "Sycamore Fence Gate"
 }

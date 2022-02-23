@@ -4,7 +4,9 @@ import com.trufflez.tsarcanum.TsArcanum;
 import com.trufflez.tsarcanum.block.custom.AuricWorkbench;
 import com.trufflez.tsarcanum.block.custom.StaffPedestal;
 import com.trufflez.tsarcanum.block.custom.VitriolBlock;
+import com.trufflez.tsarcanum.block.patches.TsPressurePlateBlock;
 import com.trufflez.tsarcanum.block.patches.TsStairsBlock;
+import com.trufflez.tsarcanum.block.patches.TsWoodenButtonBlock;
 import com.trufflez.tsarcanum.item.TsItemGroups;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -39,6 +41,10 @@ public class TsBlocks {
     public static final Block STRIPPED_GREAT_OAK_WOOD;
     public static final Block GREAT_OAK_STAIRS;
     public static final Block GREAT_OAK_SLAB;
+    public static final Block GREAT_OAK_BUTTON;
+    public static final Block GREAT_OAK_PRESSURE_PLATE;
+    public static final Block GREAT_OAK_FENCE;
+    public static final Block GREAT_OAK_FENCE_GATE;
     
     public static final Block HEARTWOOD_LOG;
     public static final Block HEARTWOOD_WOOD;
@@ -48,6 +54,10 @@ public class TsBlocks {
     public static final Block STRIPPED_HEARTWOOD_WOOD;
     public static final Block HEARTWOOD_STAIRS;
     public static final Block HEARTWOOD_SLAB;
+    public static final Block HEARTWOOD_BUTTON;
+    public static final Block HEARTWOOD_PRESSURE_PLATE;
+    public static final Block HEARTWOOD_FENCE;
+    public static final Block HEARTWOOD_FENCE_GATE;
     
     public static final Block WILLOW_LOG;
     public static final Block WILLOW_WOOD;
@@ -57,6 +67,10 @@ public class TsBlocks {
     public static final Block STRIPPED_WILLOW_WOOD;
     public static final Block WILLOW_STAIRS;
     public static final Block WILLOW_SLAB;
+    public static final Block WILLOW_BUTTON;
+    public static final Block WILLOW_PRESSURE_PLATE;
+    public static final Block WILLOW_FENCE;
+    public static final Block WILLOW_FENCE_GATE;
     
     public static final Block ELM_LOG;
     public static final Block ELM_WOOD;
@@ -66,6 +80,10 @@ public class TsBlocks {
     public static final Block STRIPPED_ELM_WOOD;
     public static final Block ELM_STAIRS;
     public static final Block ELM_SLAB;
+    public static final Block ELM_BUTTON;
+    public static final Block ELM_PRESSURE_PLATE;
+    public static final Block ELM_FENCE;
+    public static final Block ELM_FENCE_GATE;
 
     public static final Block MYRTLE_LOG;
     public static final Block MYRTLE_WOOD;
@@ -75,6 +93,10 @@ public class TsBlocks {
     public static final Block STRIPPED_MYRTLE_WOOD;
     public static final Block MYRTLE_STAIRS;
     public static final Block MYRTLE_SLAB;
+    public static final Block MYRTLE_BUTTON;
+    public static final Block MYRTLE_PRESSURE_PLATE;
+    public static final Block MYRTLE_FENCE;
+    public static final Block MYRTLE_FENCE_GATE;
 
     public static final Block SYCAMORE_LOG;
     public static final Block SYCAMORE_WOOD;
@@ -84,6 +106,10 @@ public class TsBlocks {
     public static final Block STRIPPED_SYCAMORE_WOOD;
     public static final Block SYCAMORE_STAIRS;
     public static final Block SYCAMORE_SLAB;
+    public static final Block SYCAMORE_BUTTON;
+    public static final Block SYCAMORE_PRESSURE_PLATE;
+    public static final Block SYCAMORE_FENCE;
+    public static final Block SYCAMORE_FENCE_GATE;
     
     public static final Block VITRIOL;
     
@@ -149,7 +175,11 @@ public class TsBlocks {
         STRIPPED_GREAT_OAK_WOOD = register("stripped_great_oak_wood", createLogBlock(BlockSoundGroup.WOOD));
         GREAT_OAK_SLAB = register("great_oak_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         GREAT_OAK_STAIRS = register("great_oak_stairs", new TsStairsBlock(TsBlocks.GREAT_OAK_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-    
+        GREAT_OAK_BUTTON = register("great_oak_button", new TsWoodenButtonBlock(FabricBlockSettings.of(Material.WOOD).noCollision()));
+        GREAT_OAK_PRESSURE_PLATE = register("great_oak_pressure_plate", new TsPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD).noCollision()));
+        GREAT_OAK_FENCE = register("great_oak_fence", new FenceBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        GREAT_OAK_FENCE_GATE = register("great_oak_fence_gate", new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        
         HEARTWOOD_LOG = register("heartwood_log", createLogBlock(BlockSoundGroup.WOOD));
         HEARTWOOD_WOOD = register("heartwood_wood", createLogBlock(BlockSoundGroup.WOOD));
         HEARTWOOD_PLANKS = register("heartwood_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
@@ -158,7 +188,11 @@ public class TsBlocks {
         STRIPPED_HEARTWOOD_WOOD = register("stripped_heartwood_wood", createLogBlock(BlockSoundGroup.WOOD));
         HEARTWOOD_SLAB = register("heartwood_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         HEARTWOOD_STAIRS = register("heartwood_stairs", new TsStairsBlock(TsBlocks.HEARTWOOD_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-        
+        HEARTWOOD_BUTTON = register("heartwood_button", new TsWoodenButtonBlock(FabricBlockSettings.of(Material.WOOD).noCollision()));
+        HEARTWOOD_PRESSURE_PLATE = register("heartwood_pressure_plate", new TsPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD).noCollision()));
+        HEARTWOOD_FENCE = register("heartwood_fence", new FenceBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        HEARTWOOD_FENCE_GATE = register("heartwood_fence_gate", new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+
         WILLOW_LOG = register("willow_log", createLogBlock(BlockSoundGroup.WOOD));
         WILLOW_WOOD = register("willow_wood", createLogBlock(BlockSoundGroup.WOOD));
         WILLOW_PLANKS = register("willow_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
@@ -167,7 +201,11 @@ public class TsBlocks {
         STRIPPED_WILLOW_WOOD = register("stripped_willow_wood", createLogBlock(BlockSoundGroup.WOOD));
         WILLOW_SLAB = register("willow_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         WILLOW_STAIRS = register("willow_stairs", new TsStairsBlock(TsBlocks.WILLOW_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-
+        WILLOW_BUTTON = register("willow_button", new TsWoodenButtonBlock(FabricBlockSettings.of(Material.WOOD).noCollision()));
+        WILLOW_PRESSURE_PLATE = register("willow_pressure_plate", new TsPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD).noCollision()));
+        WILLOW_FENCE = register("willow_fence", new FenceBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        WILLOW_FENCE_GATE = register("willow_fence_gate", new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        
         ELM_LOG = register("elm_log", createLogBlock(BlockSoundGroup.WOOD));
         ELM_WOOD = register("elm_wood", createLogBlock(BlockSoundGroup.WOOD));
         ELM_PLANKS = register("elm_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
@@ -176,7 +214,11 @@ public class TsBlocks {
         STRIPPED_ELM_WOOD = register("stripped_elm_wood", createLogBlock(BlockSoundGroup.WOOD));
         ELM_SLAB = register("elm_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         ELM_STAIRS = register("elm_stairs", new TsStairsBlock(TsBlocks.ELM_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-
+        ELM_BUTTON = register("elm_button", new TsWoodenButtonBlock(FabricBlockSettings.of(Material.WOOD).noCollision()));
+        ELM_PRESSURE_PLATE = register("elm_pressure_plate", new TsPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD).noCollision()));
+        ELM_FENCE = register("elm_fence", new FenceBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        ELM_FENCE_GATE = register("elm_fence_gate", new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        
         MYRTLE_LOG = register("myrtle_log", createLogBlock(BlockSoundGroup.WOOD));
         MYRTLE_WOOD = register("myrtle_wood", createLogBlock(BlockSoundGroup.WOOD));
         MYRTLE_PLANKS = register("myrtle_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
@@ -185,7 +227,11 @@ public class TsBlocks {
         STRIPPED_MYRTLE_WOOD = register("stripped_myrtle_wood", createLogBlock(BlockSoundGroup.WOOD));
         MYRTLE_SLAB = register("myrtle_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         MYRTLE_STAIRS = register("myrtle_stairs", new TsStairsBlock(TsBlocks.MYRTLE_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-
+        MYRTLE_BUTTON = register("myrtle_button", new TsWoodenButtonBlock(FabricBlockSettings.of(Material.WOOD).noCollision()));
+        MYRTLE_PRESSURE_PLATE = register("myrtle_pressure_plate", new TsPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD).noCollision()));
+        MYRTLE_FENCE = register("myrtle_fence", new FenceBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        MYRTLE_FENCE_GATE = register("myrtle_fence_gate", new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        
         SYCAMORE_LOG = register("sycamore_log", createLogBlock(BlockSoundGroup.WOOD));
         SYCAMORE_WOOD = register("sycamore_wood", createLogBlock(BlockSoundGroup.WOOD));
         SYCAMORE_PLANKS = register("sycamore_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
@@ -194,11 +240,15 @@ public class TsBlocks {
         STRIPPED_SYCAMORE_WOOD = register("stripped_sycamore_wood", createLogBlock(BlockSoundGroup.WOOD));
         SYCAMORE_SLAB = register("sycamore_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         SYCAMORE_STAIRS = register("sycamore_stairs", new TsStairsBlock(TsBlocks.SYCAMORE_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
-
+        SYCAMORE_BUTTON = register("sycamore_button", new TsWoodenButtonBlock(FabricBlockSettings.of(Material.WOOD).noCollision()));
+        SYCAMORE_PRESSURE_PLATE = register("sycamore_pressure_plate", new TsPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD).noCollision()));
+        SYCAMORE_FENCE = register("sycamore_fence", new FenceBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        SYCAMORE_FENCE_GATE = register("sycamore_fence_gate", new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD)));
+        
         VITRIOL = register("vitriol", new VitriolBlock(FabricBlockSettings.of(Material.GLASS).breakByHand(true).sounds(BlockSoundGroup.AMETHYST_CLUSTER).nonOpaque().luminance(8).dynamicBounds().noCollision()));
     }
     
     public static void init() {
-        TsArcanum.LOGGER.info("Registering blocks.");
+        TsArcanum.LOGGER.debug("Registering blocks");
     }
 }
