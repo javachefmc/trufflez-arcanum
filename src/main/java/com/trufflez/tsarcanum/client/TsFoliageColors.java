@@ -38,4 +38,5 @@ public class TsFoliageColors {
     public static int getWillowLeavesColor() { return 0xefdd44; }
     public static int getElmLeavesColor() { return 0xabee55; }
     public static int getMyrtleLeavesColor() { return 0xcb43ff; }
+    public static int getSycamoreLeavesColor() { return 0xabee55; }
 }

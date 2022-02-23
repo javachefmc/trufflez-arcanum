@@ -46,8 +46,8 @@ public class TsArcanum implements ModInitializer {
 		
 		
 		TsBlockProperties.init(); // Flammable, Compostable, Strippable, Tinted
-
-
+		
+		
 		TsBiomeKeys.init();
 		TsBiomes.init();
 		

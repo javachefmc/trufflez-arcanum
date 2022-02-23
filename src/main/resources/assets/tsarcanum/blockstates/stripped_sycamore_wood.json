@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "tsarcanum:block/stripped_sycamore_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "tsarcanum:block/stripped_sycamore_wood"
+    },
+    "axis=z": {
+      "model": "tsarcanum:block/stripped_sycamore_wood",
+      "x": 90
+    }
+  }
+}

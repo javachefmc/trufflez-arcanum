@@ -33,6 +33,7 @@ public class TsTreeConfiguredFeatures {
     public static final ConfiguredFeature<TreeFeatureConfig, ?> WILLOW;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> ELM;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> MYRTLE;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> SYCAMORE;
     
     private static Builder standard(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
         return new Builder(BlockStateProvider.of(log),
@@ -113,6 +114,22 @@ public class TsTreeConfiguredFeatures {
         )).ignoreVines();
     }
 
+    private static Builder sycamore() {
+        return (new Builder(BlockStateProvider.of(TsBlocks.SYCAMORE_LOG),
+                new TsBranchyTrunkPlacer(10, 1, 2,
+                        UniformIntProvider.create(1, 3), // branch start height
+                        UniformIntProvider.create(2, 3), // extra branch count
+                        UniformIntProvider.create(2, 3)  // bend length of main branch
+                ),
+                BlockStateProvider.of(TsBlocks.SYCAMORE_LEAVES),
+                new LargeOakFoliagePlacer(
+                        ConstantIntProvider.create(2),
+                        ConstantIntProvider.create(4), 4),
+                new TwoLayersFeatureSize(1, 0, 1)
+        )).ignoreVines();
+    }
+    
+
     private static Builder fancyOak() { // default large oak generation
         return (new Builder(BlockStateProvider.of(TsBlocks.ELM_LOG),
                 new LargeOakTrunkPlacer(3, 11, 0),
@@ -135,9 +152,10 @@ public class TsTreeConfiguredFeatures {
         WILLOW = ConfiguredFeatures.register("willow", Feature.TREE.configure(willow().build()));
         ELM = ConfiguredFeatures.register("elm", Feature.TREE.configure(elm().build()));
         MYRTLE = ConfiguredFeatures.register("myrtle", Feature.TREE.configure(myrtle().build()));
+        SYCAMORE = ConfiguredFeatures.register("sycamore", Feature.TREE.configure(sycamore().build()));
     }
     
     public static void init() {
-        TsArcanum.LOGGER.info("Registering TreeConfiguredFeatures");
+        TsArcanum.LOGGER.debug("Registering TreeConfiguredFeatures");
     }
 }

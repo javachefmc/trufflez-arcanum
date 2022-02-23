@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "tsarcanum:sycamore_logs"
+    }
+  ],
+  "result": {
+    "item": "tsarcanum:sycamore_planks",
+    "count": 4
+  }
+}

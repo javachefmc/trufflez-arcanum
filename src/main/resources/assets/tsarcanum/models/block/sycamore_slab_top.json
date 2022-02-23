@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "tsarcanum:block/sycamore_planks",
+    "top": "tsarcanum:block/sycamore_planks",
+    "side": "tsarcanum:block/sycamore_planks"
+  }
+}

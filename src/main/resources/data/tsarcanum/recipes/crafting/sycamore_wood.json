@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "tsarcanum:sycamore_log"
+    }
+  },
+  "result": {
+    "item": "tsarcanum:sycamore_wood",
+    "count": 4
+  }
+}

@@ -37,7 +37,7 @@ public class TsItems {
     public static final BlockItem WILLOW_LEAVES_ITEM;
     public static final BlockItem ELM_LEAVES_ITEM;
     public static final BlockItem MYRTLE_LEAVES_ITEM;
-    
+    public static final BlockItem SYCAMORE_LEAVES_ITEM;
 
     private static BlockItem blockItem(Block block) {
         return new BlockItem(block, new FabricItemSettings().group(TsItemGroups.MAIN));
@@ -47,7 +47,6 @@ public class TsItems {
     private static Item register(String id, StaffItem item) { return Registry.register(Registry.ITEM, new Identifier(TsArcanum.MOD_ID, id), item); }
     private static BlockItem register(String id, BlockItem blockItem) { return Registry.register(Registry.ITEM, new Identifier(TsArcanum.MOD_ID, id), blockItem); }
     
-
     static {
         DEV_TOOL = register("devtool", new DevTool(new FabricItemSettings()));
 
@@ -56,6 +55,7 @@ public class TsItems {
         WILLOW_LEAVES_ITEM = register("willow_leaves", blockItem(TsBlocks.WILLOW_LEAVES));
         ELM_LEAVES_ITEM = register("elm_leaves", blockItem(TsBlocks.ELM_LEAVES));
         MYRTLE_LEAVES_ITEM = register("myrtle_leaves", blockItem(TsBlocks.MYRTLE_LEAVES));
+        SYCAMORE_LEAVES_ITEM = register("sycamore_leaves", blockItem(TsBlocks.SYCAMORE_LEAVES));
 
         COPPER_SHEET = register("copper_sheet", new Item(new FabricItemSettings().maxCount(16).group(TsItemGroups.MAIN)));
         REFRACTORY_CLAY_BRICK = register("refractory_clay_brick", new Item(new FabricItemSettings().group(TsItemGroups.MAIN)));
@@ -74,8 +74,7 @@ public class TsItems {
         MYRTLE_STAFF = (StaffItem) register("myrtle_staff", new StaffItem(new FabricItemSettings().maxCount(1).fireproof().group(TsItemGroups.MAIN)));
     }
     
-    
     public static void init() {
-        TsArcanum.LOGGER.info("Registering items");
+        TsArcanum.LOGGER.debug("Registering items");
     }
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tsarcanum:block/sycamore_slab"
+    },
+    "type=top": {
+      "model": "tsarcanum:block/sycamore_slab_top"
+    },
+    "type=double": {
+      "model": "tsarcanum:block/sycamore_planks"
+    }
+  }
+}

@@ -56,7 +56,7 @@ public class StaffItem extends Item {
         
         
         
-        return TypedActionResult.success(itemStack);
+        return TypedActionResult.success(itemStack, false);
     }
     
     /*

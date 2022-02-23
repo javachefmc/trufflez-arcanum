@@ -75,6 +75,15 @@ public class TsBlocks {
     public static final Block STRIPPED_MYRTLE_WOOD;
     public static final Block MYRTLE_STAIRS;
     public static final Block MYRTLE_SLAB;
+
+    public static final Block SYCAMORE_LOG;
+    public static final Block SYCAMORE_WOOD;
+    public static final Block SYCAMORE_PLANKS;
+    public static final Block SYCAMORE_LEAVES;
+    public static final Block STRIPPED_SYCAMORE_LOG;
+    public static final Block STRIPPED_SYCAMORE_WOOD;
+    public static final Block SYCAMORE_STAIRS;
+    public static final Block SYCAMORE_SLAB;
     
     public static final Block VITRIOL;
     
@@ -138,7 +147,7 @@ public class TsBlocks {
         GREAT_OAK_LEAVES = registerCustom("great_oak_leaves", createLeavesBlock());
         STRIPPED_GREAT_OAK_LOG = register("stripped_great_oak_log", createLogBlock(BlockSoundGroup.WOOD));
         STRIPPED_GREAT_OAK_WOOD = register("stripped_great_oak_wood", createLogBlock(BlockSoundGroup.WOOD));
-        GREAT_OAK_SLAB = register("great_oak_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
+        GREAT_OAK_SLAB = register("great_oak_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         GREAT_OAK_STAIRS = register("great_oak_stairs", new TsStairsBlock(TsBlocks.GREAT_OAK_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
     
         HEARTWOOD_LOG = register("heartwood_log", createLogBlock(BlockSoundGroup.WOOD));
@@ -147,7 +156,7 @@ public class TsBlocks {
         HEARTWOOD_LEAVES = registerCustom("heartwood_leaves", createLeavesBlock());
         STRIPPED_HEARTWOOD_LOG = register("stripped_heartwood_log", createLogBlock(BlockSoundGroup.WOOD));
         STRIPPED_HEARTWOOD_WOOD = register("stripped_heartwood_wood", createLogBlock(BlockSoundGroup.WOOD));
-        HEARTWOOD_SLAB = register("heartwood_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
+        HEARTWOOD_SLAB = register("heartwood_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         HEARTWOOD_STAIRS = register("heartwood_stairs", new TsStairsBlock(TsBlocks.HEARTWOOD_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         
         WILLOW_LOG = register("willow_log", createLogBlock(BlockSoundGroup.WOOD));
@@ -156,7 +165,7 @@ public class TsBlocks {
         WILLOW_LEAVES = registerCustom("willow_leaves", createLeavesBlock());
         STRIPPED_WILLOW_LOG = register("stripped_willow_log", createLogBlock(BlockSoundGroup.WOOD));
         STRIPPED_WILLOW_WOOD = register("stripped_willow_wood", createLogBlock(BlockSoundGroup.WOOD));
-        WILLOW_SLAB = register("willow_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
+        WILLOW_SLAB = register("willow_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         WILLOW_STAIRS = register("willow_stairs", new TsStairsBlock(TsBlocks.WILLOW_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
 
         ELM_LOG = register("elm_log", createLogBlock(BlockSoundGroup.WOOD));
@@ -165,7 +174,7 @@ public class TsBlocks {
         ELM_LEAVES = registerCustom("elm_leaves", createLeavesBlock());
         STRIPPED_ELM_LOG = register("stripped_elm_log", createLogBlock(BlockSoundGroup.WOOD));
         STRIPPED_ELM_WOOD = register("stripped_elm_wood", createLogBlock(BlockSoundGroup.WOOD));
-        ELM_SLAB = register("elm_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
+        ELM_SLAB = register("elm_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         ELM_STAIRS = register("elm_stairs", new TsStairsBlock(TsBlocks.ELM_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
 
         MYRTLE_LOG = register("myrtle_log", createLogBlock(BlockSoundGroup.WOOD));
@@ -174,8 +183,17 @@ public class TsBlocks {
         MYRTLE_LEAVES = registerCustom("myrtle_leaves", createLeavesBlock());
         STRIPPED_MYRTLE_LOG = register("stripped_myrtle_log", createLogBlock(BlockSoundGroup.WOOD));
         STRIPPED_MYRTLE_WOOD = register("stripped_myrtle_wood", createLogBlock(BlockSoundGroup.WOOD));
-        MYRTLE_SLAB = register("myrtle_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f)));
+        MYRTLE_SLAB = register("myrtle_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
         MYRTLE_STAIRS = register("myrtle_stairs", new TsStairsBlock(TsBlocks.MYRTLE_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
+
+        SYCAMORE_LOG = register("sycamore_log", createLogBlock(BlockSoundGroup.WOOD));
+        SYCAMORE_WOOD = register("sycamore_wood", createLogBlock(BlockSoundGroup.WOOD));
+        SYCAMORE_PLANKS = register("sycamore_planks", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
+        SYCAMORE_LEAVES = registerCustom("sycamore_leaves", createLeavesBlock());
+        STRIPPED_SYCAMORE_LOG = register("stripped_sycamore_log", createLogBlock(BlockSoundGroup.WOOD));
+        STRIPPED_SYCAMORE_WOOD = register("stripped_sycamore_wood", createLogBlock(BlockSoundGroup.WOOD));
+        SYCAMORE_SLAB = register("sycamore_slab", new SlabBlock(FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
+        SYCAMORE_STAIRS = register("sycamore_stairs", new TsStairsBlock(TsBlocks.SYCAMORE_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(1.0f).sounds(BlockSoundGroup.WOOD)));
 
         VITRIOL = register("vitriol", new VitriolBlock(FabricBlockSettings.of(Material.GLASS).breakByHand(true).sounds(BlockSoundGroup.AMETHYST_CLUSTER).nonOpaque().luminance(8).dynamicBounds().noCollision()));
     }

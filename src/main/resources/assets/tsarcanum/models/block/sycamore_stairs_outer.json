@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "tsarcanum:block/elm_planks",
+    "top": "tsarcanum:block/elm_planks",
+    "side": "tsarcanum:block/elm_planks"
+  }
+}
