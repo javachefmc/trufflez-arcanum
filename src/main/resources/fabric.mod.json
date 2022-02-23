@@ -23,6 +23,9 @@
     ],
     "client": [
       "com.trufflez.tsarcanum.client.TsArcanumClient"
+    ],
+    "terrablender": [
+      "com.trufflez.tsarcanum.world.TsTerraBlenderAPI"
     ]
   },
   "mixins": [
