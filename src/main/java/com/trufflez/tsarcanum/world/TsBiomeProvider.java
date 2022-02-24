@@ -2,13 +2,16 @@ package com.trufflez.tsarcanum.world;
 
 import com.mojang.datafixers.util.Pair;
 import com.trufflez.tsarcanum.TsArcanum;
+import com.trufflez.tsarcanum.mixin.VanillaBiomeParametersAccess;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.biome.source.util.VanillaBiomeParameters;
 import terrablender.api.BiomeProvider;
+import terrablender.api.ParameterUtils;
 import terrablender.worldgen.TBClimate;
 
 import java.util.Map;
@@ -16,64 +19,63 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 public class TsBiomeProvider extends BiomeProvider {
-    /*public TsBiomeProvider(Identifier name, int overworldWeight) {
-        
-        super(name, overworldWeight);
-    }*/
-
-    private static int count = 0;
+    
+    /*
+     BiomeProvider: TerraBlender API
+    */
+    
+    private static int count = 0; // I do not fully understand this
     
     private final VanillaBiomeParameters vanillaBiomeParameters = new VanillaBiomeParameters();
     private final Set<RegistryKey<Biome>> tsBiomeKeys = new ObjectOpenHashSet<>();
     private final Map<RegistryKey<Biome>, RegistryKey<Biome>> swapper;
 
     public TsBiomeProvider(int overworldWeight,
-                           RegistryKey<Biome>[][] oceans,
-                           RegistryKey<Biome>[][] middleBiomes,
-                           RegistryKey<Biome>[][] middleBiomesVariant,
-                           RegistryKey<Biome>[][] plateauBiomes,
-                           RegistryKey<Biome>[][] plateauBiomesVariant,
-                           RegistryKey<Biome>[][] extremeHills,
+                           RegistryKey<Biome>[][] oceanBiomes, // "oceans"
+                           RegistryKey<Biome>[][] commonBiomes, // "middleBiomes"
+                           RegistryKey<Biome>[][] uncommonBiomes, // "middleBiomesVariant"
+                           RegistryKey<Biome>[][] nearMountainBiomes, // "plateauBiomes"
+                           RegistryKey<Biome>[][] specialNearMountainBiomes, // "plateauBiomesVariant"
+                           RegistryKey<Biome>[][] hillBiomes, // "extremeHills"
                            Map<RegistryKey<Biome>,RegistryKey<Biome>> swapper) {
         super(new Identifier(TsArcanum.MOD_ID, "biome_provider_" + count++), overworldWeight);
         this.swapper = swapper;
         
         // TODO: Remap from official mappings
-        /*VanillaBiomeParametersAccess vanillaBiomeParametersAccess = (VanillaBiomeParametersAccess) (Object) vanillaBiomeParameters;
-        vanillaBiomeParametersAccess.setOCEANS(oceans);
-        vanillaBiomeParametersAccess.setMIDDLE_BIOMES(middleBiomes);
-        vanillaBiomeParametersAccess.setMIDDLE_BIOMES_VARIANT(middleBiomesVariant);
-        vanillaBiomeParametersAccess.setPLATEAU_BIOMES(plateauBiomes);
-        vanillaBiomeParametersAccess.setPLATEAU_BIOMES_VARIANT(plateauBiomesVariant);
-        vanillaBiomeParametersAccess.setEXTREME_HILLS(extremeHills);
+        
+        VanillaBiomeParametersAccess vanillaBiomeParametersAccess = (VanillaBiomeParametersAccess) (Object) vanillaBiomeParameters;
+        vanillaBiomeParametersAccess.setOCEAN_BIOMES(oceanBiomes);
+        vanillaBiomeParametersAccess.setCOMMON_BIOMES(commonBiomes);
+        vanillaBiomeParametersAccess.setUNCOMMON_BIOMES(uncommonBiomes);
+        vanillaBiomeParametersAccess.setNEAR_MOUNTAIN_BIOMES(nearMountainBiomes);
+        vanillaBiomeParametersAccess.setSPECIAL_NEAR_MOUNTAIN_BIOMES(specialNearMountainBiomes);
+        vanillaBiomeParametersAccess.setHILL_BIOMES(hillBiomes);
         dumpArrays((biomeRegistryKey -> {
-            if (biomeRegistryKey != null && biomeRegistryKey != Biomes.THE_VOID) {
+            if (biomeRegistryKey != null && biomeRegistryKey != BiomeKeys.THE_VOID) {
                 tsBiomeKeys.add(biomeRegistryKey);
+                // The following code is from BYG. I do not understand it.
                 if (swapper.containsValue(biomeRegistryKey)) {
                     throw new IllegalArgumentException("Swapper cannot contain elements found in the temperature arrays.");
                 }
             }
-        }), oceans, middleBiomes, middleBiomesVariant, plateauBiomes, plateauBiomesVariant, extremeHills);*/
+        }), oceanBiomes, commonBiomes, uncommonBiomes, nearMountainBiomes, specialNearMountainBiomes, hillBiomes);
     }
     
     
     @Override
     public void addOverworldBiomes(Registry<Biome> registry, Consumer<Pair<TBClimate.ParameterPoint, RegistryKey<Biome>>> mapper) {
-        // From fabric documentation
-        /*this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
-            
-        });*/
 
         // TODO: Remap from official mappings
-        /*((VanillaBiomeParametersAccess) (Object) this.vanillaBiomeParameters).invokeAddBiomes((parameterPointResourceKeyPair -> {
-            RegistryKey<Biome> biomeKey = parameterPointResourceKeyPair.getSecond();
+        
+        ((VanillaBiomeParametersAccess) (Object) this.vanillaBiomeParameters).invokeWriteVanillaBiomeParameters((parameterPointRegistryKeyPair -> {
+            RegistryKey<Biome> biomeKey = parameterPointRegistryKeyPair.getRight(); // getSecond, getFirst
             if (this.tsBiomeKeys.contains(biomeKey)) {
-                mapper.accept(new Pair<>(ParameterUtils.convertParameterPoint(parameterPointResourceKeyPair.getFirst(), getUniquenessParameter()), biomeKey));
+                mapper.accept(new Pair<>(ParameterUtils.convertParameterPoint(parameterPointRegistryKeyPair.getLeft(), getUniquenessParameter()), biomeKey));
             }
             if (this.swapper.containsKey(biomeKey)) {
-                mapper.accept(new Pair<>(ParameterUtils.convertParameterPoint(parameterPointResourceKeyPair.getFirst(), getUniquenessParameter()), this.swapper.get(biomeKey)));
+                mapper.accept(new Pair<>(ParameterUtils.convertParameterPoint(parameterPointRegistryKeyPair.getLeft(), getUniquenessParameter()), this.swapper.get(biomeKey)));
             }
-        }));*/
+        }));
     }
 
     // Remapped

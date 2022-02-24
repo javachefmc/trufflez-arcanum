@@ -1,7 +1,16 @@
 package com.trufflez.tsarcanum.mixin;
 
+import net.minecraft.util.Pair;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 import net.minecraft.world.biome.source.util.VanillaBiomeParameters;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
+import org.spongepowered.asm.mixin.gen.Accessor;
+import org.spongepowered.asm.mixin.gen.Invoker;
+
+import java.util.function.Consumer;
 
 @Mixin(VanillaBiomeParameters.class)
 public interface VanillaBiomeParametersAccess {
@@ -10,26 +19,26 @@ public interface VanillaBiomeParametersAccess {
     // Yarn: VanillaBiomeParameters
     // Additionally, method names need to be migrated
 
-    /*@Accessor
+    @Accessor
     @Mutable
-    void setOCEANS(RegistryKey<Biome>[][] oceans);
+    void setOCEAN_BIOMES(RegistryKey<Biome>[][] oceanBiomes); // "Oceans"
 
     @Accessor @Mutable
-    void setMIDDLE_BIOMES(RegistryKey<Biome>[][] middleBiomes);
+    void setCOMMON_BIOMES(RegistryKey<Biome>[][] commonBiomes); // "Middle Biomes"
 
     @Accessor @Mutable
-    void setMIDDLE_BIOMES_VARIANT(RegistryKey<Biome>[][] middleBiomesVariant);
+    void setUNCOMMON_BIOMES(RegistryKey<Biome>[][] uncommonBiomes); // "Middle Biomes Variant"
 
     @Accessor @Mutable
-    void setPLATEAU_BIOMES(RegistryKey<Biome>[][] plateauBiomes);
+    void setNEAR_MOUNTAIN_BIOMES(RegistryKey<Biome>[][] nearMountainBiomes); // "Plateau Biomes"
 
     @Accessor @Mutable
-    void setPLATEAU_BIOMES_VARIANT(RegistryKey<Biome>[][] plateauBiomesVariant);
+    void setSPECIAL_NEAR_MOUNTAIN_BIOMES(RegistryKey<Biome>[][] specialNearMountainBiomes); // "Plateau Biomes Variant"
 
     @Accessor @Mutable
-    void setEXTREME_HILLS(RegistryKey<Biome>[][] extremeHills);
+    void setHILL_BIOMES(RegistryKey<Biome>[][] hillBiomes); // "Extreme Hills"
 
     @Invoker
-    void invokeAddBiomes(Consumer<Pair<Climate.ParameterPoint, RegistryKey<Biome>>> mapper);*/
+    void invokeWriteVanillaBiomeParameters(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper);
 }
 
