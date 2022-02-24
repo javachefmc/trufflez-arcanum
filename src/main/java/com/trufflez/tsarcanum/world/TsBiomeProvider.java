@@ -61,7 +61,6 @@ public class TsBiomeProvider extends BiomeProvider {
         }), oceanBiomes, commonBiomes, uncommonBiomes, nearMountainBiomes, specialNearMountainBiomes, hillBiomes);
     }
     
-    
     @Override
     public void addOverworldBiomes(Registry<Biome> registry, Consumer<Pair<TBClimate.ParameterPoint, RegistryKey<Biome>>> mapper) {
 

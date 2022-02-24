@@ -1,6 +1,7 @@
 package com.trufflez.tsarcanum.world;
 
 import com.trufflez.tsarcanum.TsArcanum;
+import com.trufflez.tsarcanum.world.biome.OverworldBiomeConfig;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 import terrablender.api.BiomeProvider;
@@ -21,9 +22,26 @@ public class TsTerraBlenderAPI implements TerraBlenderApi {
             }
         });
         
-        // TODO: fix
-        /*OverworldBiomeConfig.getConfig(true).values().forEach((biomeProviderData) -> {
-            BiomeProviders.register(new BYGBiomeProvider(biomeProviderData.overworldWeight(), biomeProviderData.oceans(), biomeProviderData.middleBiomes(), biomeProviderData.middleBiomesVariant(), biomeProviderData.plateauBiomes(), biomeProviderData.plateauBiomesVariant(), biomeProviderData.extremeHills(), biomeProviderData.swapper()));
-        });*/
+        // BYG appears to use a json carrier file to store and retrieve biomes
+        // Hopefully that's what this is, and not something to do with 1.18 biome injection
+        
+        
+        // TODO: FIX
+        /*
+        OverworldBiomeConfig.getConfig(true).values().forEach((biomeProviderData) -> {
+            BiomeProviders.register(new TsBiomeProvider(
+                    biomeProviderData.overworldWeight(),
+                    biomeProviderData.oceanBiomes(),
+                    biomeProviderData.commonBiomes(),
+                    biomeProviderData.uncommonBiomes(),
+                    biomeProviderData.nearMountainBiomes(),
+                    biomeProviderData.specialNearMountainBiomes(),
+                    biomeProviderData.hillBiomes(),
+                    biomeProviderData.swapper()));
+        });
+        
+         */
+        
+        
     }
 }
