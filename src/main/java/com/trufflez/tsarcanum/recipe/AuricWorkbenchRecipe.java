@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.recipes;
+package com.trufflez.tsarcanum.recipe;
 
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;

@@ -1,6 +1,7 @@
 package com.trufflez.tsarcanum.world;
 
 import com.trufflez.tsarcanum.TsArcanum;
+import com.trufflez.tsarcanum.world.biome.TsBiomeProvider;
 import net.minecraft.util.Identifier;
 import terrablender.api.BiomeProviders;
 import terrablender.api.TerraBlenderApi;

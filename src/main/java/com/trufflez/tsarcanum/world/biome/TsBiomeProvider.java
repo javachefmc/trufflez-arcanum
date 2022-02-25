@@ -1,12 +1,12 @@
-package com.trufflez.tsarcanum.world;
+package com.trufflez.tsarcanum.world.biome;
 
 import com.mojang.datafixers.util.Pair;
-import com.trufflez.tsarcanum.world.biome.TsBiomeKeys;
+import com.trufflez.tsarcanum.TsArcanum;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
+import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 import terrablender.api.BiomeProvider;
 import terrablender.worldgen.TBClimate;
 
@@ -20,27 +20,16 @@ public class TsBiomeProvider extends BiomeProvider {
     
     @Override
     public void addOverworldBiomes(Registry<Biome> registry, Consumer<Pair<TBClimate.ParameterPoint, RegistryKey<Biome>>> mapper) {
-        this.addBiomeSimilar(mapper, BiomeKeys.PLAINS, TsBiomeKeys.GREAT_OAK_FOREST);
-        // TODO: adjust this stuff
-        /*this.addBiome(mapper,
-                MultiNoiseUtil.ParameterRange.of(0.0F), // temperature
-                MultiNoiseUtil.ParameterRange.of(0.0F), // humidity
-                MultiNoiseUtil.ParameterRange.of(0.0F), // continentalness
-                MultiNoiseUtil.ParameterRange.of(0.0F), // erosion
+        this.addBiome(mapper,
+                MultiNoiseUtil.ParameterRange.of(0.6F), // temperature
+                MultiNoiseUtil.ParameterRange.of(0.8F), // humidity
+                MultiNoiseUtil.ParameterRange.of(10.0F), // continentalness
+                MultiNoiseUtil.ParameterRange.of(10.0F), // erosion
                 MultiNoiseUtil.ParameterRange.of(0.0F), // weirdness
                 MultiNoiseUtil.ParameterRange.of(0.0F), // depth
                 0.0F,                                   // offset
-                TsBiomeKeys.GREAT_OAK_FOREST);*/
+                TsBiomeKeys.GREAT_OAK_FOREST);
+
+        TsArcanum.LOGGER.debug("Adding overworld biomes");
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

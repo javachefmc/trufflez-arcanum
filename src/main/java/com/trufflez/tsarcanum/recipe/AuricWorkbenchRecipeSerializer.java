@@ -1,4 +1,4 @@
-package com.trufflez.tsarcanum.recipes;
+package com.trufflez.tsarcanum.recipe;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
