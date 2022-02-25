@@ -1,10 +1,10 @@
 package com.trufflez.tsarcanum.world.biome;
 
+import com.trufflez.tsarcanum.world.feature.TsPlacedFeatures;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.sound.MusicSound;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
@@ -45,22 +45,34 @@ public class TsBiomeCreator {
         DefaultBiomeFeatures.addFrozenTopLayer(generationSettings);
     }
     
-    
     public static Biome createGreatOakForest() {
-        SpawnSettings.Builder builder = new SpawnSettings.Builder();
-        DefaultBiomeFeatures.addFarmAnimals(builder);
-        DefaultBiomeFeatures.addBatsAndMonsters(builder);
-        net.minecraft.world.biome.GenerationSettings.Builder builder2 = new net.minecraft.world.biome.GenerationSettings.Builder();
-        addBasicFeatures(builder2);
-        builder2.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.DARK_FOREST_VEGETATION);
-        DefaultBiomeFeatures.addForestFlowers(builder2);
-        DefaultBiomeFeatures.addDefaultOres(builder2);
-        DefaultBiomeFeatures.addDefaultDisks(builder2);
-        DefaultBiomeFeatures.addDefaultFlowers(builder2);
-        DefaultBiomeFeatures.addForestGrass(builder2);
-        DefaultBiomeFeatures.addDefaultMushrooms(builder2);
-        DefaultBiomeFeatures.addDefaultVegetation(builder2);
-        return (new net.minecraft.world.biome.Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.FOREST).temperature(0.7F).downfall(0.8F).effects((new net.minecraft.world.biome.BiomeEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(getSkyColor(0.7F)).grassColorModifier(BiomeEffects.GrassColorModifier.DARK_FOREST).moodSound(BiomeMoodSound.CAVE).build()).spawnSettings(builder.build()).generationSettings(builder2.build()).build();
+        SpawnSettings.Builder spawnSettingsBuilder = new SpawnSettings.Builder();
+        //DefaultBiomeFeatures.addFarmAnimals(spawnSettingsBuilder);
+        DefaultBiomeFeatures.addBatsAndMonsters(spawnSettingsBuilder);
+        net.minecraft.world.biome.GenerationSettings.Builder genBuilder = new net.minecraft.world.biome.GenerationSettings.Builder();
+        addBasicFeatures(genBuilder);
+
+        genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_JUNGLE);
+        genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, TsPlacedFeatures.GREAT_OAK_PLACED); //VegetationPlacedFeatures.DARK_FOREST_VEGETATION
+        
+        DefaultBiomeFeatures.addDefaultOres(genBuilder);            // Normal ores and magma
+        DefaultBiomeFeatures.addDefaultDisks(genBuilder);           // sand, clay, gravel
+        DefaultBiomeFeatures.addForestGrass(genBuilder);            // grass
+        DefaultBiomeFeatures.addDefaultMushrooms(genBuilder);       // 
+        
+        return (new net.minecraft.world.biome.Biome.Builder())
+                .precipitation(Biome.Precipitation.RAIN)
+                .category(Biome.Category.FOREST)
+                .temperature(0.7F)
+                .downfall(0.8F)
+                .effects((new net.minecraft.world.biome.BiomeEffects.Builder())
+                        .waterColor(1391452)
+                        .waterFogColor(596779)
+                        .fogColor(7574665)
+                        .skyColor(7574665)
+                        .grassColor(7574665)
+                        .moodSound(BiomeMoodSound.CAVE).build())
+                .spawnSettings(spawnSettingsBuilder.build()).generationSettings(genBuilder.build()).build();
     }
     
     

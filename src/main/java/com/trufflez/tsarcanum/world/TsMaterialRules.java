@@ -1,14 +1,9 @@
 package com.trufflez.tsarcanum.world;
 
-import net.minecraft.world.gen.surfacebuilder.MaterialRules;
-
 public class TsMaterialRules {
-
     
+    // I don't quite understand what material rules are, but they're probably important
     
-    
-    
-    // per each custom biome
     /*public static final SurfaceRules.RuleSource SWAMP_SURFACE_RULES = SurfaceRules.ifTrue(SurfaceRules.isBiome(BYGBiomes.BAYOU, BYGBiomes.CYPRESS_SWAMPLANDS),
             SurfaceRules.ifTrue(
                     ABOVE_62,
@@ -21,11 +16,10 @@ public class TsMaterialRules {
             ));
     */
     
-    
-    // per each custom biome
+    /* // Implementation
     public static final MaterialRules.MaterialRule OVERWORLD_ABOVE_PRELIMINARY_SURFACE = MaterialRules.condition(MaterialRules.surface(),
-            MaterialRules.sequence());
+            MaterialRules.sequence([...]));
     
     public static final MaterialRules.MaterialRule OVERWORLD_SURFACE_RULES = MaterialRules.sequence(OVERWORLD_ABOVE_PRELIMINARY_SURFACE);
-    
+    */
 }

@@ -93,9 +93,15 @@ public class TsBranchyTrunkPlacer extends TrunkPlacer {
         float yPercent;
         int yPos = 0;
         
+        System.out.println("Creating branch with properties: ");
+        System.out.println("SizeX: "+sizeX);
+        System.out.println("SizeZ: "+sizeZ);
+        System.out.println("branchLength: "+branchLength);
+        System.out.println("angle: "+angle);
+        
         for(int i = 0; i < branchLength; ++i) { // loop over main branch length, not tree height (some branches may be horizontal)
             yPos = (int) (i * yStep); // Operating block height; Warning: int cast floors. Sometimes this results in a shorter branch, I think
-            yPercent = (float) (i / branchLength); // Current percent of height.
+            yPercent = (float) i / branchLength; // Current percent of height.
             getAndSetState(world, replacer, random, startPos.up( yPos )
                     .offset(Direction.Axis.X, (int) ( yPercent * sizeX ))
                     .offset(Direction.Axis.Z, (int) ( yPercent * sizeZ )), config

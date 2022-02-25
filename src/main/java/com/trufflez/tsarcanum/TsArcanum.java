@@ -11,16 +11,25 @@ import com.trufflez.tsarcanum.world.feature.TsConfiguredFeatures;
 import com.trufflez.tsarcanum.world.feature.TsPlacedFeatures;
 import com.trufflez.tsarcanum.world.feature.TsTreeConfiguredFeatures;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.file.Path;
+
 public class TsArcanum implements ModInitializer {
-	
 	public static final String MOD_ID = "tsarcanum";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static Path CONFIG = null;
+	
+	public static void setCONFIG(){
+		CONFIG = FabricLoader.getInstance().getConfigDir().resolve(MOD_ID);
+	}
 	
 	@Override
 	public void onInitialize() {
+		
+		setCONFIG();
 		
 		// Must be done in this order!
 		
@@ -50,6 +59,8 @@ public class TsArcanum implements ModInitializer {
 		
 		TsBiomeKeys.init();
 		TsBiomes.init();
+
+		
 		
 		//TsWorldGen.init(); // World generation
 		
