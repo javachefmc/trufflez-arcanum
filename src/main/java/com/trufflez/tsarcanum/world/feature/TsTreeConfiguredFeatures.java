@@ -45,14 +45,17 @@ public class TsTreeConfiguredFeatures {
     }
     
     /*
-    
+
             ALL OF THESE TREES ARE NOT FINAL!!
-    
+
      */
     
     private static Builder greatOak() {
         return (new Builder(BlockStateProvider.of(TsBlocks.GREAT_OAK_LOG),
-                new TsLargeTrunkPlacer(8, 0, 0),
+                new TsLargeTrunkPlacer(12, 0, 0,
+                        UniformIntProvider.create(1, 3), // branch start height
+                        UniformIntProvider.create(2, 3), // extra branch count
+                        UniformIntProvider.create(2, 3)),  // bend length of main branch
                 BlockStateProvider.of(TsBlocks.GREAT_OAK_LEAVES),
                 new LargeOakFoliagePlacer(
                         ConstantIntProvider.create(2),
@@ -116,10 +119,10 @@ public class TsTreeConfiguredFeatures {
 
     private static Builder sycamore() {
         return (new Builder(BlockStateProvider.of(TsBlocks.SYCAMORE_LOG),
-                new TsBranchyTrunkPlacer(10, 1, 2,
-                        UniformIntProvider.create(1, 3), // branch start height
+                new TsLargeTrunkPlacer(24, 1, 2,
+                        UniformIntProvider.create(15, 16), // branch start height
                         UniformIntProvider.create(2, 3), // extra branch count
-                        UniformIntProvider.create(2, 3)  // bend length of main branch
+                        UniformIntProvider.create(5, 6)  // bend length of main branch
                 ),
                 BlockStateProvider.of(TsBlocks.SYCAMORE_LEAVES),
                 new LargeOakFoliagePlacer(

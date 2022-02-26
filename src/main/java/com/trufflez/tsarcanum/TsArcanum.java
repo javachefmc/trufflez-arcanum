@@ -60,8 +60,7 @@ public class TsArcanum implements ModInitializer {
 		TsBiomeKeys.init();
 		TsBiomeConfiguration.init();
 
-		
-		
+
 		//TsWorldGen.init(); // World generation
 		
 		LOGGER.info("Trufflez' Arcanum Loaded.");
