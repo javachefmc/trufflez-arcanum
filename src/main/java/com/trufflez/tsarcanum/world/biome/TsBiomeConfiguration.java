@@ -46,17 +46,20 @@ public abstract class TsBiomeConfiguration {
         
         net.minecraft.world.biome.GenerationSettings.Builder genBuilder = new net.minecraft.world.biome.GenerationSettings.Builder();
         addBasicFeatures(genBuilder);
-
-        DefaultBiomeFeatures.addMossyRocks(genBuilder);
         
-        genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_JUNGLE);
-        genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, TsPlacedFeatures.GREAT_OAK_PLACED); // see VegetationPlacedFeatures
+        DefaultBiomeFeatures.addMossyRocks(genBuilder);
+        DefaultBiomeFeatures.addLargeFerns(genBuilder);
 
-        DefaultBiomeFeatures.addDefaultOres(genBuilder);            // Normal ores and magma
+        genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_TALL_GRASS);
+        genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_NORMAL);
+        genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, TsPlacedFeatures.GREAT_OAK_VEGETATION_PLACED);
+        //genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, TsPlacedFeatures.SYCAMORE_PLACED);
+        // TODO: fix sycamore placement
+        
+        DefaultBiomeFeatures.addDefaultOres(genBuilder);            // ores and magma
         DefaultBiomeFeatures.addDefaultDisks(genBuilder);           // sand, clay, gravel
-        //DefaultBiomeFeatures.addForestGrass(genBuilder);            // grass
-        DefaultBiomeFeatures.addGiantTaigaGrass(genBuilder);
-        DefaultBiomeFeatures.addDefaultMushrooms(genBuilder);       // mushrooms
+        
+        genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, TsPlacedFeatures.BROWN_MUSHROOM_OLD_GROWTH);
         
         return (new net.minecraft.world.biome.Biome.Builder())
                 .precipitation(Biome.Precipitation.RAIN)
@@ -69,6 +72,7 @@ public abstract class TsBiomeConfiguration {
                         .fogColor(10007466)
                         .skyColor(7574665)
                         .grassColor(3434816)
+                        //.foliageColor(2391347)
                         .moodSound(BiomeMoodSound.CAVE).build())
                 .spawnSettings(spawnSettingsBuilder.build())
                 .generationSettings(genBuilder.build())

@@ -14,10 +14,12 @@ import java.util.List;
 
 public class TsConfiguredFeatures {
     
-    public static final ConfiguredFeature<RandomFeatureConfig, ?> GREAT_OAK_FOREST_TREES;
+    public static final ConfiguredFeature<RandomFeatureConfig, ?> GREAT_OAK_FOREST_VEGETATION;
     public static final ConfiguredFeature<RandomFeatureConfig, ?> HEARTWOOD_TREE_RANDOM;
     public static final ConfiguredFeature<RandomFeatureConfig, ?> WILLOW_TREE_RANDOM;
     public static final ConfiguredFeature<RandomFeatureConfig, ?> ELM_TREE_RANDOM;
+    public static final ConfiguredFeature<RandomFeatureConfig, ?> MYRTLE_TREE_RANDOM;
+    public static final ConfiguredFeature<RandomFeatureConfig, ?> SYCAMORE_TREE_RANDOM;
     
     
     
@@ -33,10 +35,13 @@ public class TsConfiguredFeatures {
     
     
     static {
-        GREAT_OAK_FOREST_TREES = register("great_oak_tree_feature",
+        GREAT_OAK_FOREST_VEGETATION = register("great_oak_forest_vegetation",
                 Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(List.of(
-                        new RandomFeatureEntry(TsTreeConfiguredFeatures.GREAT_OAK.withWouldSurviveFilter(TsSaplings.GREAT_OAK_SAPLING), 0.6f), 
-                        new RandomFeatureEntry(TreeConfiguredFeatures.JUNGLE_BUSH.withWouldSurviveFilter(Blocks.OAK_SAPLING), 0.1f)
+                        new RandomFeatureEntry(TsTreeConfiguredFeatures.GREAT_OAK.withWouldSurviveFilter(TsSaplings.GREAT_OAK_SAPLING), 0.2f),
+                        //new RandomFeatureEntry(TsTreeConfiguredFeatures.SYCAMORE.withWouldSurviveFilter(TsSaplings.SYCAMORE_SAPLING), 0.01f),
+                        new RandomFeatureEntry(TreeConfiguredFeatures.JUNGLE_BUSH.withWouldSurviveFilter(Blocks.OAK_SAPLING), 0.4f),
+                        new RandomFeatureEntry(TreeConfiguredFeatures.OAK.withWouldSurviveFilter(Blocks.OAK_SAPLING), 0.5f),
+                        new RandomFeatureEntry(TreeConfiguredFeatures.BIRCH.withWouldSurviveFilter(Blocks.BIRCH_SAPLING), 0.7f)
                 ),
                         TsTreeConfiguredFeatures.GREAT_OAK.withWouldSurviveFilter(TsSaplings.GREAT_OAK_SAPLING)
                 )));
@@ -56,6 +61,16 @@ public class TsConfiguredFeatures {
                 Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(List.of(new RandomFeatureEntry(
                         TsTreeConfiguredFeatures.ELM.withWouldSurviveFilter(TsSaplings.ELM_SAPLING), 0.1f)),
                         TsTreeConfiguredFeatures.ELM.withWouldSurviveFilter(TsSaplings.ELM_SAPLING)
+                )));
+        MYRTLE_TREE_RANDOM = register("myrtle_tree_feature",
+                Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(List.of(new RandomFeatureEntry(
+                        TsTreeConfiguredFeatures.MYRTLE.withWouldSurviveFilter(TsSaplings.MYRTLE_SAPLING), 0.1f)),
+                        TsTreeConfiguredFeatures.MYRTLE.withWouldSurviveFilter(TsSaplings.MYRTLE_SAPLING)
+                )));
+        SYCAMORE_TREE_RANDOM = register("sycamore_tree_feature",
+                Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(List.of(new RandomFeatureEntry(
+                        TsTreeConfiguredFeatures.SYCAMORE.withWouldSurviveFilter(TsSaplings.SYCAMORE_SAPLING), 0.1f)),
+                        TsTreeConfiguredFeatures.SYCAMORE.withWouldSurviveFilter(TsSaplings.SYCAMORE_SAPLING)
                 )));
     }
     

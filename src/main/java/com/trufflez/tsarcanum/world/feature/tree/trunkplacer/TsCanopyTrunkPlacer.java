@@ -50,9 +50,6 @@ public class TsCanopyTrunkPlacer extends TrunkPlacer {
 
         setToDirt(world, replacer, random, startPos.down(), config); // dirt under tree
 
-        // TODO: max branch start height
-        // I will start with linear interpolation and figure out curves later
-
         List<FoliagePlacer.TreeNode> FoliageList = new ArrayList<>();
 
         int angle = (int) Math.round( Math.random() * circle ); // random angle in radians
@@ -65,7 +62,7 @@ public class TsCanopyTrunkPlacer extends TrunkPlacer {
         float sizeX = TsMath.sin(angle) * thisBendLength;
         float sizeZ = TsMath.cos(angle) * thisBendLength;
 
-        makeBranch(world, replacer, random, config, FoliageList, startPos, angle, height, thisBendLength); // TODO: merge with loop below
+        makeBranch(world, replacer, random, config, FoliageList, startPos, angle, height, thisBendLength);
 
         int branchHeight;
         float branchHeightPercentage; // init outside loop
