@@ -19,21 +19,21 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.BiConsumer;
 
-public class TsLargeTrunkPlacer extends TrunkPlacer {
+public class TsCanopyTrunkPlacer extends TrunkPlacer {
 
     public static final float circle = 6.28f; // this is in radians
 
-    public static final Codec<TsLargeTrunkPlacer> CODEC = RecordCodecBuilder.create((instance) -> fillTrunkPlacerFields(instance).and(instance.group(
-            IntProvider.createValidatingCodec(1, 10).fieldOf("branch_count").forGetter((placer) -> placer.branchCount),
+    public static final Codec<TsCanopyTrunkPlacer> CODEC = RecordCodecBuilder.create((instance) -> fillTrunkPlacerFields(instance).and(instance.group(
+            IntProvider.createValidatingCodec(1, 30).fieldOf("branch_count").forGetter((placer) -> placer.branchCount),
             IntProvider.createValidatingCodec(1, 10).fieldOf("branch_bend").forGetter((placer) -> placer.branchBend),
             IntProvider.createValidatingCodec(0, 100).fieldOf("branch_start").forGetter((placer) -> placer.branchStart)
-    )).apply(instance, TsLargeTrunkPlacer::new));
+    )).apply(instance, TsCanopyTrunkPlacer::new));
 
     private final IntProvider branchCount;
     private final IntProvider branchBend;
     private final IntProvider branchStart;
 
-    public TsLargeTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight, IntProvider branchStart, IntProvider branchCount, IntProvider bendLength) {
+    public TsCanopyTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight, IntProvider branchStart, IntProvider branchCount, IntProvider bendLength) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
         this.branchStart = branchStart;
         this.branchCount = branchCount;
@@ -42,7 +42,7 @@ public class TsLargeTrunkPlacer extends TrunkPlacer {
 
     @Override
     protected TrunkPlacerType<?> getType() {
-        return TsTrunkPlacers.LARGE_TRUNK_PLACER;
+        return TsTrunkPlacers.CANOPY_TRUNK_PLACER;
     }
 
     @Override
@@ -58,8 +58,9 @@ public class TsLargeTrunkPlacer extends TrunkPlacer {
         int angle = (int) Math.round( Math.random() * circle ); // random angle in radians
 
         int thisBranchCount = branchCount.get(random);
-        int thisBranchStart = branchStart.get(random);
-        int thisBendLength = branchBend.get(random);
+        float trunkToBranchRatio = (float) 0.01 * branchStart.get(random);
+        int thisBranchStart = (int) (height * trunkToBranchRatio);
+        int thisBendLength = (int) branchBend.get(random) / 5;
 
         float sizeX = TsMath.sin(angle) * thisBendLength;
         float sizeZ = TsMath.cos(angle) * thisBendLength;

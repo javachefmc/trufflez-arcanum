@@ -46,12 +46,16 @@ public abstract class TsBiomeConfiguration {
         
         net.minecraft.world.biome.GenerationSettings.Builder genBuilder = new net.minecraft.world.biome.GenerationSettings.Builder();
         addBasicFeatures(genBuilder);
+
+        DefaultBiomeFeatures.addMossyRocks(genBuilder);
+        
         genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_JUNGLE);
         genBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, TsPlacedFeatures.GREAT_OAK_PLACED); // see VegetationPlacedFeatures
 
         DefaultBiomeFeatures.addDefaultOres(genBuilder);            // Normal ores and magma
         DefaultBiomeFeatures.addDefaultDisks(genBuilder);           // sand, clay, gravel
-        DefaultBiomeFeatures.addForestGrass(genBuilder);            // grass
+        //DefaultBiomeFeatures.addForestGrass(genBuilder);            // grass
+        DefaultBiomeFeatures.addGiantTaigaGrass(genBuilder);
         DefaultBiomeFeatures.addDefaultMushrooms(genBuilder);       // mushrooms
         
         return (new net.minecraft.world.biome.Biome.Builder())
@@ -62,9 +66,9 @@ public abstract class TsBiomeConfiguration {
                 .effects((new net.minecraft.world.biome.BiomeEffects.Builder())
                         .waterColor(1391452)
                         .waterFogColor(596779)
-                        .fogColor(7574665)
+                        .fogColor(10007466)
                         .skyColor(7574665)
-                        .grassColor(7574665)
+                        .grassColor(3434816)
                         .moodSound(BiomeMoodSound.CAVE).build())
                 .spawnSettings(spawnSettingsBuilder.build())
                 .generationSettings(genBuilder.build())

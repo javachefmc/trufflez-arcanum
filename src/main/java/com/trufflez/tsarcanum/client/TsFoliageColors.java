@@ -17,9 +17,9 @@ public class TsFoliageColors {
     public static int getBiomeGreatOakLeavesColor(BlockRenderView world, BlockPos pos) {
         int[] color = colorToArray(BiomeColors.getFoliageColor(world, pos));
 
-        color[0] = (int) Math.round(color[0] * 0.50);
-        color[1] = (int) Math.round(color[1] * 0.65);
-        color[2] = (int) Math.round(color[2] * 0.65);
+        color[0] = (int) Math.round(color[0] * 0.65);
+        color[1] = (int) Math.round(color[1] * 0.70);
+        color[2] = (int) Math.round(color[2] * 0.70);
 
         return arrayToColor(color);
     }
@@ -37,6 +37,6 @@ public class TsFoliageColors {
     public static int getHeartwoodLeavesColor() { return 0xef2466; }
     public static int getWillowLeavesColor() { return 0xefdd44; }
     public static int getElmLeavesColor() { return 0xabee55; }
-    public static int getMyrtleLeavesColor() { return 0xcb43ff; }
-    public static int getSycamoreLeavesColor() { return 0xabee55; }
+    public static int getMyrtleLeavesColor() { return 0xf531c7; }
+    public static int getSycamoreLeavesColor() { return 0xd4ff00; }
 }

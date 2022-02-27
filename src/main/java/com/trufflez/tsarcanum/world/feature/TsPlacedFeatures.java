@@ -47,9 +47,11 @@ public class TsPlacedFeatures {
     
     static {
         GREAT_OAK_PLACED = registerPlacedFeature("great_oak_spawn",
-                TsConfiguredFeatures.GREAT_OAK_TREE_RANDOM.withPlacement(VegetationPlacedFeatures.modifiers(
-                        PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)
+                TsConfiguredFeatures.GREAT_OAK_FOREST_TREES.withPlacement(VegetationPlacedFeatures.modifiers(
+                        PlacedFeatures.createCountExtraModifier(2, 0.1f, 4)
                 )));
+                
+        //new RandomFeatureEntry(TreePlacedFeatures.JUNGLE_BUSH, 0.5F)
         //Placeholder
         HEARTWOOD_PLACED = registerPlacedFeature("heartwood_spawn",
                 TsConfiguredFeatures.HEARTWOOD_TREE_RANDOM.withPlacement(VegetationPlacedFeatures.modifiers(

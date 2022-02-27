@@ -2,6 +2,7 @@ package com.trufflez.tsarcanum.world.feature;
 
 import com.trufflez.tsarcanum.TsArcanum;
 import com.trufflez.tsarcanum.block.TsSaplings;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class TsConfiguredFeatures {
     
-    public static final ConfiguredFeature<RandomFeatureConfig, ?> GREAT_OAK_TREE_RANDOM;
+    public static final ConfiguredFeature<RandomFeatureConfig, ?> GREAT_OAK_FOREST_TREES;
     public static final ConfiguredFeature<RandomFeatureConfig, ?> HEARTWOOD_TREE_RANDOM;
     public static final ConfiguredFeature<RandomFeatureConfig, ?> WILLOW_TREE_RANDOM;
     public static final ConfiguredFeature<RandomFeatureConfig, ?> ELM_TREE_RANDOM;
@@ -32,9 +33,11 @@ public class TsConfiguredFeatures {
     
     
     static {
-        GREAT_OAK_TREE_RANDOM = register("great_oak_tree_feature",
-                Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(List.of(new RandomFeatureEntry(
-                        TsTreeConfiguredFeatures.GREAT_OAK.withWouldSurviveFilter(TsSaplings.GREAT_OAK_SAPLING), 0.1f)),
+        GREAT_OAK_FOREST_TREES = register("great_oak_tree_feature",
+                Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(List.of(
+                        new RandomFeatureEntry(TsTreeConfiguredFeatures.GREAT_OAK.withWouldSurviveFilter(TsSaplings.GREAT_OAK_SAPLING), 0.6f), 
+                        new RandomFeatureEntry(TreeConfiguredFeatures.JUNGLE_BUSH.withWouldSurviveFilter(Blocks.OAK_SAPLING), 0.1f)
+                ),
                         TsTreeConfiguredFeatures.GREAT_OAK.withWouldSurviveFilter(TsSaplings.GREAT_OAK_SAPLING)
                 )));
         
