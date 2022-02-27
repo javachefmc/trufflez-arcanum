@@ -6,7 +6,7 @@ This is a **fabric-only mod** that aims to recreate the atmosphere of classic ma
 
 > Currently Pre-Alpha - Incomplete, but showcases some of the ever increasing number of blocks, items, and worldgen features.
 
-> Due to changes since Minecraft 1.18, biome modifications are currently incompatible with other biome mods/datapacks.
+> This mod requires TerraBlender. Download it here: <br/> https://www.curseforge.com/minecraft/mc-mods/terrablender-fabric <br/> Additionally, due to changes since Minecraft 1.18, biome modifications are currently incompatible with other biome mods/datapacks.
 
 ## Planned Features
 - **Automatable alchemy** for extracting energy from materials
@@ -24,11 +24,11 @@ This is a **fabric-only mod** that aims to recreate the atmosphere of classic ma
 - **Thaumcraft** - what magic mod isn't?
 
 ## Currently Implemented
-- Base models for workbench, staves, alembic, and vitriol
-- Four new tree types with entirely custom (but work-in-progress) generation
+- Six new tree types with entirely custom (but work-in-progress) generation
     - Their respective log/wood/stripped variants, leaves, plank variants, stairs, and slabs
+- Some worldgen (one custom biome)
 - Crafting recipes, furnace recipes, and blast furnace recipes
-- Base texture work
+- Base models and texture work
 
 ## Common Questions
 - **When will this be done?**
@@ -57,4 +57,4 @@ No.
 <br/>
 **CurseForge:** https://www.curseforge.com/minecraft/mc-mods/trufflez-arcanum
 <br/>
-**Wiki** https://trufflez-arcanum.fandom.com/wiki/Main_Page
+**Wiki:** https://trufflez-arcanum.fandom.com/wiki/Main_Page

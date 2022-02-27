@@ -12,7 +12,7 @@ public class TsTerraBlenderAPI implements TerraBlenderApi {
         
         TsArcanum.setCONFIG();
 
-        BiomeProviders.register(new TsBiomeProvider(new Identifier(TsArcanum.MOD_ID, "tsbiome_provider"), 6));
+        BiomeProviders.register(new TsBiomeProvider(new Identifier(TsArcanum.MOD_ID, "tsbiome_provider"), 2));
         
         // Register material rules. I do not know what material rules are
         /*BiomeProviders.register(new BiomeProvider(new Identifier(TsArcanum.MOD_ID, "surface_data"), 0) {

@@ -23,8 +23,8 @@ public class TsBiomeProvider extends BiomeProvider {
         this.addBiome(mapper,
                 MultiNoiseUtil.ParameterRange.of(0.6F), // temperature
                 MultiNoiseUtil.ParameterRange.of(0.8F), // humidity
-                MultiNoiseUtil.ParameterRange.of(10.0F), // continentalness
-                MultiNoiseUtil.ParameterRange.of(10.0F), // erosion
+                MultiNoiseUtil.ParameterRange.of(2.0F), // continentalness
+                MultiNoiseUtil.ParameterRange.of(2.0F), // erosion
                 MultiNoiseUtil.ParameterRange.of(0.0F), // weirdness
                 MultiNoiseUtil.ParameterRange.of(0.0F), // depth
                 0.0F,                                   // offset
