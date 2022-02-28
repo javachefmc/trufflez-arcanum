@@ -14,11 +14,11 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
 @SuppressWarnings("unused")
-public class TubeBlock extends ConnectingBlock { // Based on ChorusPlantBlock
+public class SpigotBlock extends ConnectingBlock { // Based on ChorusPlantBlock
     /*
     TODO: Add tool that can change block state of tube based on side the tube is clicked on
      */
-    public TubeBlock(Settings settings) {
+    public SpigotBlock(Settings settings) {
         super(0.1875F, settings);
         this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState())
                 .with(NORTH, false)).with(EAST, false)).with(SOUTH, false)).with(WEST, false)).with(UP, false)).with(DOWN, false));
@@ -36,12 +36,12 @@ public class TubeBlock extends ConnectingBlock { // Based on ChorusPlantBlock
         BlockState blockState5 = world.getBlockState(pos.south());
         BlockState blockState6 = world.getBlockState(pos.west());
         return (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.getDefaultState()
-                .with(DOWN, blockState.isOf(this) || blockState.isOf(TsBlocks.COPPER_SPIGOT)))
-                .with(UP, blockState2.isOf(this) || blockState2.isOf(TsBlocks.COPPER_SPIGOT)))
-                .with(NORTH, blockState3.isOf(this) || blockState3.isOf(TsBlocks.COPPER_SPIGOT)))
-                .with(EAST, blockState4.isOf(this) || blockState4.isOf(TsBlocks.COPPER_SPIGOT)))
-                .with(SOUTH, blockState5.isOf(this) || blockState5.isOf(TsBlocks.COPPER_SPIGOT)))
-                .with(WEST, blockState6.isOf(this) || blockState6.isOf(TsBlocks.COPPER_SPIGOT));
+                .with(DOWN, blockState.isOf(this) || blockState.isOf(TsBlocks.COPPER_TUBING)))
+                .with(UP, blockState2.isOf(this) || blockState2.isOf(TsBlocks.COPPER_TUBING)))
+                .with(NORTH, blockState3.isOf(this) || blockState3.isOf(TsBlocks.COPPER_TUBING)))
+                .with(EAST, blockState4.isOf(this) || blockState4.isOf(TsBlocks.COPPER_TUBING)))
+                .with(SOUTH, blockState5.isOf(this) || blockState5.isOf(TsBlocks.COPPER_TUBING)))
+                .with(WEST, blockState6.isOf(this) || blockState6.isOf(TsBlocks.COPPER_TUBING));
     }
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
@@ -49,7 +49,7 @@ public class TubeBlock extends ConnectingBlock { // Based on ChorusPlantBlock
             world.createAndScheduleBlockTick(pos, this, 1);
             return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
         } else {
-            boolean bl = neighborState.isOf(this) || neighborState.isOf(TsBlocks.COPPER_SPIGOT);
+            boolean bl = neighborState.isOf(this) || neighborState.isOf(TsBlocks.COPPER_TUBING);
             return state.with(FACING_PROPERTIES.get(direction), bl);
         }
     }

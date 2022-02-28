@@ -1,7 +1,5 @@
 {
-	"textures": {
-		"missing": "minecraft:block/copper_block"
-	},
+	"credit": "Made with Blockbench",
 	"elements": [
 		{
 			"from": [3, 2, 3],

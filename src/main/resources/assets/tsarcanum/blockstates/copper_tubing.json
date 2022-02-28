@@ -1,5 +1,68 @@
 {
-  "variants": {
-    "": {"model": "tsarcanum:block/copper_tubing"}
-  }
+  "multipart": [
+    {
+      "apply": {
+        "model": "tsarcanum:block/copper_tubing"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "tsarcanum:block/copper_tubing_side",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "tsarcanum:block/copper_tubing_side",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "tsarcanum:block/copper_tubing_side",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "tsarcanum:block/copper_tubing_side",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "tsarcanum:block/copper_tubing_side",
+        "x": -90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "tsarcanum:block/copper_tubing_side",
+        "x": 90,
+        "uvlock": true
+      }
+    }
+  ]
 }

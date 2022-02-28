@@ -1,9 +1,7 @@
 package com.trufflez.tsarcanum.block;
 
 import com.trufflez.tsarcanum.TsArcanum;
-import com.trufflez.tsarcanum.block.custom.AuricWorkbench;
-import com.trufflez.tsarcanum.block.custom.StaffPedestal;
-import com.trufflez.tsarcanum.block.custom.VitriolBlock;
+import com.trufflez.tsarcanum.block.custom.*;
 import com.trufflez.tsarcanum.block.patches.TsPressurePlateBlock;
 import com.trufflez.tsarcanum.block.patches.TsStairsBlock;
 import com.trufflez.tsarcanum.block.patches.TsWoodenButtonBlock;
@@ -31,7 +29,9 @@ public class TsBlocks {
     public static final Block REFRACTORY_CLAY;
     public static final Block REFRACTORY_BLOCK;
     public static final Block REFRACTORY_BRICKS;
-    public static final Block ATHANOR;
+    public static final Block FURNACE_ARCANA;
+    public static final Block GLASS_RECEIVER;
+    public static final Block PHIAL_RACK;
     
     public static final Block GREAT_OAK_LOG;
     public static final Block GREAT_OAK_WOOD;
@@ -158,14 +158,16 @@ public class TsBlocks {
         
         AURIC_WORKBENCH = register("auric_workbench", new AuricWorkbench(FabricBlockSettings.of(Material.WOOD).strength(4.0f)));
         STAFF_PEDESTAL = register("staff_pedestal", new StaffPedestal(FabricBlockSettings.of(Material.STONE).nonOpaque().luminance(15)));
-        COPPER_TUBING = register("copper_tubing", new Block(FabricBlockSettings.of(Material.STONE).nonOpaque()));
-        COPPER_SPIGOT = register("copper_spigot", new Block(FabricBlockSettings.of(Material.STONE).nonOpaque()));
+        COPPER_TUBING = register("copper_tubing", new TubeBlock(FabricBlockSettings.of(Material.STONE).nonOpaque()));
+        COPPER_SPIGOT = register("copper_spigot", new SpigotBlock(FabricBlockSettings.of(Material.STONE).nonOpaque()));
         ALEMBIC = register("alembic", new Block(FabricBlockSettings.of(Material.STONE).nonOpaque()));
         
         REFRACTORY_CLAY = register("refractory_clay", new Block(FabricBlockSettings.of(Material.STONE).strength(2.0f)));
         REFRACTORY_BLOCK = register("refractory_block", new Block(FabricBlockSettings.of(Material.STONE).strength(2.0f)));
         REFRACTORY_BRICKS = register("refractory_bricks", new Block(FabricBlockSettings.of(Material.STONE).strength(2.0f)));
-        ATHANOR = register("athanor", new Block(FabricBlockSettings.of(Material.STONE)));
+        FURNACE_ARCANA = register("furnace_arcana", new FurnaceArcanaBlock(FabricBlockSettings.of(Material.STONE)));
+        GLASS_RECEIVER = register("glass_receiver", new ReceiverBlock(FabricBlockSettings.of(Material.GLASS).nonOpaque()));
+        PHIAL_RACK = register("phial_rack", new ReceiverBlock(FabricBlockSettings.of(Material.GLASS).nonOpaque()));
 
         GREAT_OAK_LOG = register("great_oak_log", createLogBlock(BlockSoundGroup.WOOD));
         GREAT_OAK_WOOD = register("great_oak_wood", createLogBlock(BlockSoundGroup.WOOD));

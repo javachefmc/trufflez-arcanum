@@ -10,6 +10,7 @@
   
   "item.tsarcanum.copper_sheet": "Copper Sheet",
   "block.tsarcanum.copper_tubing": "Copper Tubing",
+  "block.tsarcanum.copper_spigot": "Copper Spigot",
   "block.tsarcanum.alembic": "Alembic",
 
   "block.tsarcanum.refractory_clay": "Refractory Clay",
@@ -17,7 +18,7 @@
   "item.tsarcanum.refractory_brick": "Refractory Brick",
   "block.tsarcanum.refractory_bricks": "Refractory Bricks",
   "block.tsarcanum.refractory_block": "Refractory Block",
-  "block.tsarcanum.athanor": "Furnace Arcana",
+  "block.tsarcanum.furnace_arcana": "Furnace Arcana",
   
   "item.tsarcanum.great_oak_staff_core": "Great Oak Staff Core",
   "item.tsarcanum.heartwood_staff_core": "Heartwood Staff Core",

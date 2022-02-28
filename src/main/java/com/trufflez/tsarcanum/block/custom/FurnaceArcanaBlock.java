@@ -2,8 +2,8 @@ package com.trufflez.tsarcanum.block.custom;
 
 import net.minecraft.block.FurnaceBlock;
 
-public class AthanorBlock extends FurnaceBlock {
-    protected AthanorBlock(Settings settings) {
+public class FurnaceArcanaBlock extends FurnaceBlock {
+    public FurnaceArcanaBlock(Settings settings) {
         super(settings);
     }
 }

@@ -1,18 +1,15 @@
 package com.trufflez.tsarcanum.client;
 
+import com.trufflez.tsarcanum.block.TsBlockEntities;
 import com.trufflez.tsarcanum.block.TsBlocks;
 import com.trufflez.tsarcanum.block.TsSaplings;
-import com.trufflez.tsarcanum.item.TsItems;
 import com.trufflez.tsarcanum.screen.AuricWorkbenchScreen;
-import com.trufflez.tsarcanum.block.TsBlockEntities;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
-import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
 public class TsArcanumClient implements ClientModInitializer {
@@ -29,7 +26,11 @@ public class TsArcanumClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.ELM_SAPLING);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.MYRTLE_SAPLING);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsSaplings.SYCAMORE_SAPLING);
-        
+
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), TsBlocks.FURNACE_ARCANA);
+
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), TsBlocks.PHIAL_RACK);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), TsBlocks.GLASS_RECEIVER);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), TsBlocks.VITRIOL);
 
         //BlockRenderLayerMap.INSTANCE.putItems(RenderLayer.getTranslucent(), TsItems.GREAT_OAK_STAFF);
