@@ -19,7 +19,7 @@ public abstract class TsBiomeConfiguration {
     // Convert to RegistryEntry<Biome> if access is necessary
     //public static final Biome GREAT_OAK_FOREST = 
     static {
-        register(TsBiomeKeys.GREAT_OAK_FOREST, createGreatOakForest());
+        //register(TsBiomeKeys.GREAT_OAK_FOREST, createGreatOakForest());
     }
     
     protected static final int DEFAULT_WATER_COLOR = 4159204;

@@ -2,6 +2,8 @@ package com.trufflez.tsarcanum.world.feature;
 
 import com.trufflez.tsarcanum.TsArcanum;
 import com.trufflez.tsarcanum.block.TsBlocks;
+import com.trufflez.tsarcanum.world.feature.tree.TsFoliagePlacers;
+import com.trufflez.tsarcanum.world.feature.tree.TsTrunkPlacers;
 import com.trufflez.tsarcanum.world.feature.tree.foliageplacer.TsDroopyFoliagePlacer;
 import com.trufflez.tsarcanum.world.feature.tree.foliageplacer.TsLargeFoliagePlacer;
 import com.trufflez.tsarcanum.world.feature.tree.trunkplacer.TsCanopyTrunkPlacer;
@@ -151,6 +153,9 @@ public class TsTreeConfiguredFeatures {
     }
     
     static {
+        TsTrunkPlacers.init();
+        TsFoliagePlacers.init();
+        
         GREAT_OAK = ConfiguredFeatures.register("great_oak", Feature.TREE, greatOak().build());
         HEARTWOOD = ConfiguredFeatures.register("heartwood", Feature.TREE, heartwood().build());
         WILLOW = ConfiguredFeatures.register("willow", Feature.TREE, willow().build());
@@ -158,7 +163,6 @@ public class TsTreeConfiguredFeatures {
         MYRTLE = ConfiguredFeatures.register("myrtle", Feature.TREE, myrtle().build());
         SYCAMORE = ConfiguredFeatures.register("sycamore", Feature.TREE, sycamore().build());
     }
-    
     public static void init() {
         TsArcanum.LOGGER.debug("Registering TreeConfiguredFeatures");
     }

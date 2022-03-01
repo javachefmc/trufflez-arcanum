@@ -1,5 +1,6 @@
 package com.trufflez.tsarcanum.world.feature.tree;
 
+import com.trufflez.tsarcanum.TsArcanum;
 import com.trufflez.tsarcanum.mixin.FoliagePlacerTypeInvoker;
 import com.trufflez.tsarcanum.world.feature.tree.foliageplacer.TsDroopyFoliagePlacer;
 import com.trufflez.tsarcanum.world.feature.tree.foliageplacer.TsLargeFoliagePlacer;
@@ -13,5 +14,9 @@ public class TsFoliagePlacers {
     static {
         LARGE_FOLIAGE_PLACER = FoliagePlacerTypeInvoker.callRegister("large_foliage_placer", TsLargeFoliagePlacer.CODEC);
         DROOPY_FOLIAGE_PLACER = FoliagePlacerTypeInvoker.callRegister("droopy_foliage_placer", TsDroopyFoliagePlacer.CODEC);
+    }
+    
+    public static void init() {
+        TsArcanum.LOGGER.debug("Registering FoliagePlacers");
     }
 }

@@ -129,7 +129,7 @@ public class TsPlacedFeatures {
         SYCAMORE_PLACED = PlacedFeatures.register("sycamore_spawn", TsConfiguredFeatures.SYCAMORE_TREE_RANDOM,
                         modifiersWithChance(10, CountPlacementModifier.of(1)) // Last argument can also be (PlacementModifier)null
                 );
-        BROWN_MUSHROOM_OLD_GROWTH = PlacedFeatures.register("brown_mushroom_old_growth",
+        BROWN_MUSHROOM_OLD_GROWTH = PlacedFeatures.register("ts_brown_mushroom_old_growth",
                 VegetationConfiguredFeatures.PATCH_BROWN_MUSHROOM, VegetationPlacedFeatures.modifiers(
                         PlacedFeatures.createCountExtraModifier(10, 0.1f, 1)
                 ));
