@@ -15,10 +15,8 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 public class TsSaplings {
     
@@ -45,19 +43,15 @@ public class TsSaplings {
         return new BlockItem(block, new FabricItemSettings().group(TsItemGroups.MAIN));
     }
 
-    private static TsSaplingBlock register(String id, RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> configuredFeature) {
+    private static TsSaplingBlock register(String id, ConfiguredFeature<?, ?> configuredFeature) {
         return Registry.register(Registry.BLOCK, new Identifier(TsArcanum.MOD_ID, id),
                 new TsSaplingBlock(new TsSaplingGenerator(configuredFeature), FabricBlockSettings.of(Material.PLANT)
                         .nonOpaque()
-                        .noCollision()
-                        .ticksRandomly()
-                        .breakInstantly()
                         .sounds(BlockSoundGroup.GRASS)
+                        .suffocates(TsSaplings::no)
+                        .blockVision(TsSaplings::no)
+                        .noCollision()
                 ));
-    }
-
-    private static Block register(String id, Block block) {
-        return (Block)Registry.register(Registry.BLOCK, new Identifier(TsArcanum.MOD_ID, id), block);
     }
     
     private static TsSaplingBlock register(String id, TsSaplingBlock tsSaplingBlock) {

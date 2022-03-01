@@ -15,12 +15,9 @@ import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class TsBiomeConfiguration {
+
+    public static final Biome GREAT_OAK_FOREST = register(TsBiomeKeys.GREAT_OAK_FOREST, createGreatOakForest());
     
-    // Convert to RegistryEntry<Biome> if access is necessary
-    //public static final Biome GREAT_OAK_FOREST = 
-    static {
-        register(TsBiomeKeys.GREAT_OAK_FOREST, createGreatOakForest());
-    }
     
     protected static final int DEFAULT_WATER_COLOR = 4159204;
     protected static final int DEFAULT_WATER_FOG_COLOR = 329011;
@@ -82,9 +79,8 @@ public abstract class TsBiomeConfiguration {
                 .build();
     }
     
-    private static void register(RegistryKey<Biome> key, Biome biome) {
-        //return (Biome) BuiltinRegistries.set(BuiltinRegistries.BIOME, key, biome);
-        BuiltinRegistries.add(BuiltinRegistries.BIOME, key, biome);
+    private static Biome register(RegistryKey<Biome> key, Biome biome) {
+        return (Biome) BuiltinRegistries.set(BuiltinRegistries.BIOME, key, biome);
     }
     
     public static void init() {

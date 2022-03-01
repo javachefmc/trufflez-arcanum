@@ -13,7 +13,6 @@ import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.TreeFeatureConfig.Builder;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
@@ -29,15 +28,12 @@ import java.util.OptionalInt;
 
 public class TsTreeConfiguredFeatures {
     
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> GREAT_OAK;
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> HEARTWOOD;
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> WILLOW;
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> ELM;
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> MYRTLE;
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> SYCAMORE;
-    
-    // New syntax:
-    //public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> BOXWOOD;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> GREAT_OAK;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> HEARTWOOD;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> WILLOW;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> ELM;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> MYRTLE;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> SYCAMORE;
     
     private static Builder standard(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
         return new Builder(BlockStateProvider.of(log),
@@ -151,12 +147,12 @@ public class TsTreeConfiguredFeatures {
     }
     
     static {
-        GREAT_OAK = ConfiguredFeatures.register("great_oak", Feature.TREE, greatOak().build());
-        HEARTWOOD = ConfiguredFeatures.register("heartwood", Feature.TREE, heartwood().build());
-        WILLOW = ConfiguredFeatures.register("willow", Feature.TREE, willow().build());
-        ELM = ConfiguredFeatures.register("elm", Feature.TREE, elm().build());
-        MYRTLE = ConfiguredFeatures.register("myrtle", Feature.TREE, myrtle().build());
-        SYCAMORE = ConfiguredFeatures.register("sycamore", Feature.TREE, sycamore().build());
+        GREAT_OAK = ConfiguredFeatures.register("great_oak", Feature.TREE.configure(greatOak().build()));
+        HEARTWOOD = ConfiguredFeatures.register("heartwood", Feature.TREE.configure(heartwood().build()));
+        WILLOW = ConfiguredFeatures.register("willow", Feature.TREE.configure(willow().build()));
+        ELM = ConfiguredFeatures.register("elm", Feature.TREE.configure(elm().build()));
+        MYRTLE = ConfiguredFeatures.register("myrtle", Feature.TREE.configure(myrtle().build()));
+        SYCAMORE = ConfiguredFeatures.register("sycamore", Feature.TREE.configure(sycamore().build()));
     }
     
     public static void init() {

@@ -12,9 +12,7 @@ public abstract class TsBiomeKeys {
     
     
     
-    private static RegistryKey<Biome> register(String name) {
-        return RegistryKey.of(Registry.BIOME_KEY, new Identifier(TsArcanum.MOD_ID, name));
-    }
+    private static RegistryKey<Biome> register(String name) { return RegistryKey.of(Registry.BIOME_KEY, new Identifier(TsArcanum.MOD_ID, name)); }
     
     public static void init() {
         TsArcanum.LOGGER.debug("Registering Biomes");
