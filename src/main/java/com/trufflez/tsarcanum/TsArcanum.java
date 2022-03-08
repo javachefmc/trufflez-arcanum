@@ -7,6 +7,7 @@ import com.trufflez.tsarcanum.block.TsSaplings;
 import com.trufflez.tsarcanum.item.TsItems;
 import com.trufflez.tsarcanum.world.biome.TsBiomeKeys;
 import com.trufflez.tsarcanum.world.biome.TsBiomeConfiguration;
+import com.trufflez.tsarcanum.world.biome.TsRegions;
 import com.trufflez.tsarcanum.world.feature.TsConfiguredFeatures;
 import com.trufflez.tsarcanum.world.feature.TsPlacedFeatures;
 import com.trufflez.tsarcanum.world.feature.TsTreeConfiguredFeatures;
@@ -53,15 +54,14 @@ public class TsArcanum implements ModInitializer {
 		
 		TsBlockEntities.init(); // Block Entities and ScreenHandlers
 		
-		
 		TsBlockProperties.init(); // Flammable, Compostable, Strippable, Tinted
 		
 		
-		//TsBiomeKeys.init();
-		//TsBiomeConfiguration.init();
-
-
-		//TsWorldGen.init(); // World generation
+		TsBiomeKeys.init();				// Biome registration
+		TsBiomeConfiguration.init();	// Biome generation features
+		TsRegions.init();				// Biome injection through TerraBlender
+		
+		//TsWorldGen.init(); // Additional feature generation
 		
 		LOGGER.info("Trufflez' Arcanum Loaded.");
 	}

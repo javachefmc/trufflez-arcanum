@@ -1,17 +1,16 @@
 package com.trufflez.tsarcanum.world;
 
 import com.trufflez.tsarcanum.TsArcanum;
-import com.trufflez.tsarcanum.world.biome.TsBiomeProvider;
-import net.minecraft.util.Identifier;
-//import terrablender.api.BiomeProviders;
-//import terrablender.api.TerraBlenderApi;
+import terrablender.api.TerraBlenderApi;
 
-public class TsTerraBlenderAPI { // implements TerraBlenderApi 
+public class TsTerraBlenderAPI implements TerraBlenderApi {
     //@Override
     public void onTerraBlenderInitialized() {
         
         TsArcanum.setCONFIG();
-
+        
+        // TODO: TerraBlender nuked BiomeProviders
+        
         //BiomeProviders.register(new TsBiomeProvider(new Identifier(TsArcanum.MOD_ID, "tsbiome_provider"), 2));
         
         // Register material rules. I do not know what material rules are
